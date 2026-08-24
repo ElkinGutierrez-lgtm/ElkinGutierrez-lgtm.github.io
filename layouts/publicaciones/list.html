@@ -16,12 +16,12 @@
 
     <div class="publication-list">
 
-        {{ range .Pages.ByDate.Reverse }}
+        {{ range .Pages.ByWeight }}
 
         <a href="{{ .RelPermalink }}" class="publication">
 
-            <div class="publication-year">
-                {{ .Date.Format "2006" }}
+            <div class="publication-number">
+                {{ printf "%03d" .Weight }}
             </div>
 
             <div class="publication-info">
@@ -30,19 +30,7 @@
                     {{ .Title }}
                 </h2>
 
-                <div class="publication-meta">
-
-                    {{ with .Params.tipo }}
-                    <span>{{ . }}</span>
-                    {{ end }}
-
-                    {{ with .Params.revista }}
-                    <span>{{ . }}</span>
-                    {{ end }}
-
-                </div>
-
-                {{ with .Description }}
+                {{ with .Params.description }}
 
                 <p>
                     {{ . }}
@@ -91,13 +79,13 @@
 
     display: grid;
 
-    grid-template-columns: 100px 1fr 50px;
+    grid-template-columns: 80px 1fr 50px;
 
     gap: 30px;
 
-    align-items: start;
+    align-items: center;
 
-    padding: 38px 20px;
+    padding: 42px 20px;
 
     border-bottom: 1px solid var(--line);
 
@@ -116,13 +104,13 @@
 
 }
 
-.publication-year {
+.publication-number {
 
     color: var(--accent);
 
-    font-size: 12px;
+    font-size: 11px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
@@ -130,41 +118,15 @@
 
 .publication-info h2 {
 
-    margin: 0 0 12px;
+    margin: 0 0 10px;
 
     color: var(--foreground);
 
-    font-size: 27px;
+    font-size: 32px;
 
     font-weight: 500;
 
-    letter-spacing: -0.5px;
-
-}
-
-.publication-meta {
-
-    display: flex;
-
-    gap: 15px;
-
-    margin-bottom: 12px;
-
-    color: var(--muted);
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
-
-}
-
-.publication-meta span + span::before {
-
-    content: "·";
-
-    margin-right: 15px;
+    letter-spacing: -1px;
 
 }
 
@@ -176,7 +138,7 @@
 
     color: var(--muted);
 
-    font-size: 14px;
+    font-size: 15px;
 
     line-height: 1.6;
 
@@ -186,7 +148,11 @@
 
     color: var(--muted);
 
-    font-size: 22px;
+    font-size: 24px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
 
 }
 
@@ -194,13 +160,15 @@
 
     color: var(--accent);
 
+    transform: translateX(5px);
+
 }
 
 @media (max-width: 700px) {
 
     .publication {
 
-        grid-template-columns: 55px 1fr 20px;
+        grid-template-columns: 45px 1fr 25px;
 
         gap: 15px;
 
@@ -208,9 +176,22 @@
 
     }
 
+    .publication:hover {
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+    }
+
     .publication-info h2 {
 
-        font-size: 22px;
+        font-size: 25px;
+
+    }
+
+    .publication-info p {
+
+        font-size: 14px;
 
     }
 

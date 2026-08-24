@@ -11,9 +11,7 @@
     </h1>
 
     <div class="page-intro">
-
         {{ .Content }}
-
     </div>
 
     <div class="research-list">
@@ -23,7 +21,7 @@
         <a href="{{ .RelPermalink }}" class="research-card">
 
             <div class="research-number">
-                {{ printf "%03d" (add 1 .Weight) }}
+                {{ printf "%03d" .Weight }}
             </div>
 
             <div class="research-main">
@@ -32,13 +30,9 @@
                     {{ .Title }}
                 </h2>
 
-                {{ with .Description }}
-
                 <p>
-                    {{ . }}
+                    {{ .Description }}
                 </p>
-
-                {{ end }}
 
             </div>
 
@@ -59,11 +53,8 @@
 
 .page-intro {
     max-width: 720px;
-
     margin-bottom: 80px;
-
     color: var(--muted);
-
     font-size: 18px;
     line-height: 1.8;
 }
@@ -73,128 +64,82 @@
 }
 
 .research-card {
-
     display: grid;
-
     grid-template-columns: 80px 1fr 50px;
-
     align-items: center;
-
     gap: 30px;
-
     padding: 42px 20px;
-
     border-bottom: 1px solid var(--line);
-
     transition:
         background 0.25s ease,
         padding 0.25s ease;
-
 }
 
 .research-card:hover {
-
     background: #11110F;
-
     padding-left: 30px;
     padding-right: 30px;
-
 }
 
 .research-number {
-
     color: var(--accent);
-
     font-size: 11px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
 }
 
 .research-main h2 {
-
     margin: 0 0 10px;
-
     color: var(--foreground);
-
     font-size: 32px;
-
     font-weight: 500;
-
     letter-spacing: -1px;
-
 }
 
 .research-main p {
-
     max-width: 650px;
-
     margin: 0;
-
     color: var(--muted);
-
     font-size: 15px;
-
     line-height: 1.6;
-
 }
 
 .research-arrow {
-
     color: var(--muted);
-
     font-size: 24px;
-
     transition:
         color 0.2s ease,
         transform 0.2s ease;
-
 }
 
 .research-card:hover .research-arrow {
-
     color: var(--accent);
-
     transform: translateX(5px);
-
 }
-
 
 @media (max-width: 700px) {
 
     .research-card {
-
         grid-template-columns: 45px 1fr 25px;
-
         gap: 15px;
-
         padding: 30px 10px;
-
     }
 
     .research-card:hover {
-
         padding-left: 15px;
         padding-right: 15px;
-
     }
 
     .research-main h2 {
-
         font-size: 25px;
-
     }
 
     .research-main p {
-
         font-size: 14px;
-
     }
 
 }
 
 </style>
 
-{{ end }}      
+{{ end }}
