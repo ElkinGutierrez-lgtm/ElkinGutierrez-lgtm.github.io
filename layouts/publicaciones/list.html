@@ -1,0 +1,217 @@
+{{ define "main" }}
+
+<section class="page">
+
+    <div class="page-eyebrow">
+        02 — Publicaciones
+    </div>
+
+    <h1 class="page-title">
+        {{ .Title }}
+    </h1>
+
+    <div class="page-intro">
+        {{ .Content }}
+    </div>
+
+    <div class="publication-list">
+
+        {{ range .Pages.ByDate.Reverse }}
+
+        <a href="{{ .RelPermalink }}" class="publication">
+
+            <div class="publication-year">
+                {{ .Date.Format "2006" }}
+            </div>
+
+            <div class="publication-info">
+
+                <h2>
+                    {{ .Title }}
+                </h2>
+
+                <div class="publication-meta">
+
+                    {{ with .Params.tipo }}
+                    <span>{{ . }}</span>
+                    {{ end }}
+
+                    {{ with .Params.revista }}
+                    <span>{{ . }}</span>
+                    {{ end }}
+
+                </div>
+
+                {{ with .Description }}
+
+                <p>
+                    {{ . }}
+                </p>
+
+                {{ end }}
+
+            </div>
+
+            <div class="publication-arrow">
+                →
+            </div>
+
+        </a>
+
+        {{ end }}
+
+    </div>
+
+</section>
+
+
+<style>
+
+.page-intro {
+    max-width: 720px;
+
+    margin-bottom: 80px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.publication-list {
+    border-top: 1px solid var(--line);
+}
+
+.publication {
+
+    display: grid;
+
+    grid-template-columns: 100px 1fr 50px;
+
+    gap: 30px;
+
+    align-items: start;
+
+    padding: 38px 20px;
+
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+
+}
+
+.publication:hover {
+
+    background: #11110F;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.publication-year {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+.publication-info h2 {
+
+    margin: 0 0 12px;
+
+    color: var(--foreground);
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+
+}
+
+.publication-meta {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+.publication-meta span + span::before {
+
+    content: "·";
+
+    margin-right: 15px;
+
+}
+
+.publication-info p {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+.publication-arrow {
+
+    color: var(--muted);
+
+    font-size: 22px;
+
+}
+
+.publication:hover .publication-arrow {
+
+    color: var(--accent);
+
+}
+
+
+@media (max-width: 700px) {
+
+    .publication {
+
+        grid-template-columns: 55px 1fr 20px;
+
+        gap: 15px;
+
+        padding: 30px 10px;
+
+    }
+
+    .publication-info h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+</style>
+
+{{ end }}

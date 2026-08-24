@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ if .Title }}
+            {{ .Title }} — Elkin Gutiérrez
+        {{ else }}
+            Elkin Gutiérrez — Filósofo e investigador
+        {{ end }}
+    </title>
+
+    <meta name="description"
+          content="{{ with .Description }}{{ . }}{{ else }}Elkin Gutiérrez. Filósofo e investigador.{{ end }}">
+
+    <style>
+
+        :root {
+            --background: #0A0A09;
+            --foreground: #E8E4DC;
+            --muted: #8B8881;
+            --line: #292825;
+            --accent: #7A2638;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--foreground);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 28px 5vw;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .brand {
+            font-size: 14px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--muted);
+
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .page {
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 110px 5vw 140px;
+        }
+
+        .page-eyebrow {
+            margin-bottom: 35px;
+
+            color: var(--accent);
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .page-title {
+            max-width: 1000px;
+
+            margin: 0 0 60px;
+
+            font-size: clamp(70px, 10vw, 140px);
+            line-height: 0.84;
+
+            letter-spacing: -0.06em;
+            font-weight: 700;
+        }
+
+        .page-content {
+            max-width: 760px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        .page-content p {
+            margin: 0 0 28px;
+        }
+
+        .page-content strong {
+            color: var(--foreground);
+            font-weight: 400;
+        }
+
+        .page-content h2 {
+            margin-top: 70px;
+            margin-bottom: 25px;
+
+            color: var(--foreground);
+
+            font-size: 36px;
+            line-height: 1.1;
+        }
+
+        .page-content ul {
+            padding-left: 25px;
+        }
+
+        .page-content li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 30px 5vw;
+
+            border-top: 1px solid var(--line);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+
+            .site-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .page {
+                padding-top: 80px;
+            }
+
+            .page-title {
+                font-size: 70px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <a href="/" class="brand">
+        ELKIN <span>GUTIÉRREZ</span>
+    </a>
+
+    <nav>
+
+        <a href="/investigacion/">
+            Investigación
+        </a>
+
+        <a href="/publicaciones/">
+            Publicaciones
+        </a>
+
+        <a href="/sobre-mi/">
+            Sobre mí
+        </a>
+
+        <a href="/cv/">
+            CV
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    {{ block "main" . }}
+
+    {{ end }}
+
+</main>
+
+
+<footer>
+
+    <span>
+        © 2026 Elkin Gutiérrez
+    </span>
+
+    <span>
+        Filosofía · Investigación
+    </span>
+
+</footer>
+
+</body>
+
+</html>

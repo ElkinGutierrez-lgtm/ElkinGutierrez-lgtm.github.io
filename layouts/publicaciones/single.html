@@ -1,0 +1,126 @@
+{{ define "main" }}
+
+<section class="page">
+
+    <div class="page-eyebrow">
+        {{ with .Params.tipo }}
+            {{ . }}
+        {{ else }}
+            Publicación
+        {{ end }}
+    </div>
+
+    <h1 class="page-title">
+        {{ .Title }}
+    </h1>
+
+    <div class="publication-detail">
+
+        <div class="publication-data">
+
+            {{ with .Date }}
+            <div>
+                <span>Año</span>
+                <strong>{{ .Format "2006" }}</strong>
+            </div>
+            {{ end }}
+
+            {{ with .Params.revista }}
+            <div>
+                <span>Publicación</span>
+                <strong>{{ . }}</strong>
+            </div>
+            {{ end }}
+
+        </div>
+
+        <div class="page-content">
+
+            {{ .Content }}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+.publication-detail {
+    max-width: 900px;
+}
+
+.publication-data {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-bottom: 80px;
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+}
+
+.publication-data div {
+
+    padding: 25px;
+
+    border-right: 1px solid var(--line);
+
+}
+
+.publication-data div:last-child {
+    border-right: none;
+}
+
+.publication-data span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+.publication-data strong {
+
+    color: var(--foreground);
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .publication-data {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .publication-data div {
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--line);
+
+    }
+
+}
+
+</style>
+
+{{ end }}
