@@ -4,6 +4,7 @@ title = "Elkin Gutiérrez — Filósofo e investigador"
 
 enableRobotsTXT = true
 
+
 [params]
 
     author = "Elkin Gutiérrez"
@@ -31,6 +32,10 @@ enableRobotsTXT = true
 
         scholar = ""
 
+
+# =========================================
+# MARKUP
+# =========================================
 
 [markup]
 

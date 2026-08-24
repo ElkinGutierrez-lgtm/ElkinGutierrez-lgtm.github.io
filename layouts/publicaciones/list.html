@@ -6,31 +6,46 @@
         02 — Publicaciones
     </div>
 
+
     <h1 class="page-title">
         {{ .Title }}
     </h1>
 
+
+    {{ with .Params.description }}
+
     <div class="page-intro">
-        {{ .Content }}
+        {{ . }}
     </div>
+
+    {{ end }}
+
 
     <div class="publication-list">
 
-        {{ range .Pages.ByWeight }}
 
-        <a href="{{ .RelPermalink }}" class="publication">
+        {{ range $index, $page := .Pages.ByWeight }}
+
+        <a href="{{ $page.RelPermalink }}"
+           class="publication">
+
 
             <div class="publication-number">
-                {{ printf "%03d" .Weight }}
+
+                {{ printf "%03d" (add $index 1) }}
+
             </div>
+
 
             <div class="publication-info">
 
+
                 <h2>
-                    {{ .Title }}
+                    {{ $page.Title }}
                 </h2>
 
-                {{ with .Params.description }}
+
+                {{ with $page.Params.description }}
 
                 <p>
                     {{ . }}
@@ -38,15 +53,21 @@
 
                 {{ end }}
 
+
             </div>
 
+
             <div class="publication-arrow">
+
                 →
+
             </div>
+
 
         </a>
 
         {{ end }}
+
 
     </div>
 
@@ -54,6 +75,10 @@
 
 
 <style>
+
+/* =========================================
+   INTRODUCCIÓN
+   ========================================= */
 
 .page-intro {
 
@@ -69,17 +94,29 @@
 
 }
 
+
+/* =========================================
+   LISTA DE PUBLICACIONES
+   ========================================= */
+
 .publication-list {
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid var(--line);
 
 }
+
+
+/* =========================================
+   PUBLICACIÓN
+   ========================================= */
 
 .publication {
 
     display: grid;
 
-    grid-template-columns: 80px 1fr 50px;
+    grid-template-columns:
+        80px 1fr 50px;
 
     gap: 30px;
 
@@ -87,7 +124,8 @@
 
     padding: 42px 20px;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid var(--line);
 
     transition:
         background 0.25s ease,
@@ -95,60 +133,97 @@
 
 }
 
+
 .publication:hover {
 
-    background: #11110F;
+    background:
+        #11110F;
 
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left:
+        30px;
+
+    padding-right:
+        30px;
 
 }
+
+
+/* =========================================
+   NÚMERO
+   ========================================= */
 
 .publication-number {
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    letter-spacing: 2px;
+    letter-spacing:
+        2px;
 
 }
+
+
+/* =========================================
+   INFORMACIÓN
+   ========================================= */
 
 .publication-info h2 {
 
-    margin: 0 0 10px;
+    margin:
+        0 0 10px;
 
-    color: var(--foreground);
+    color:
+        var(--foreground);
 
-    font-size: 32px;
+    font-size:
+        32px;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    letter-spacing: -1px;
+    letter-spacing:
+        -1px;
 
 }
+
 
 .publication-info p {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    margin: 0;
+    margin:
+        0;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
 
 }
 
+
+/* =========================================
+   FLECHA
+   ========================================= */
+
 .publication-arrow {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 24px;
+    font-size:
+        24px;
 
     transition:
         color 0.2s ease,
@@ -156,47 +231,70 @@
 
 }
 
-.publication:hover .publication-arrow {
 
-    color: var(--accent);
+.publication:hover
+.publication-arrow {
 
-    transform: translateX(5px);
+    color:
+        var(--accent);
+
+    transform:
+        translateX(5px);
 
 }
 
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 700px) {
+
 
     .publication {
 
-        grid-template-columns: 45px 1fr 25px;
+        grid-template-columns:
+            45px 1fr 25px;
 
-        gap: 15px;
+        gap:
+            15px;
 
-        padding: 30px 10px;
+        padding:
+            30px 10px;
 
     }
+
 
     .publication:hover {
 
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left:
+            15px;
+
+        padding-right:
+            15px;
 
     }
+
 
     .publication-info h2 {
 
-        font-size: 25px;
+        font-size:
+            25px;
 
     }
+
 
     .publication-info p {
 
-        font-size: 14px;
+        font-size:
+            14px;
 
     }
+
 
 }
 
 </style>
+
 
 {{ end }}

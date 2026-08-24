@@ -1130,159 +1130,121 @@
 <section class="section academic-section">
 
     <div class="section-label">
-        03 — Presencia académica
+        03 � Presencia acad�mica
     </div>
 
     <div class="academic-grid">
 
-    {{ with .Site.Params.academic.orcid }}
+        {{ with .Site.Params.academic.orcid }}
 
-    <a href="{{ . }}"
-       class="academic-link"
-       target="_blank"
-       rel="noopener noreferrer">
+        <a href="{{ . }}"
+           class="academic-link"
+           target="_blank"
+           rel="noopener noreferrer">
 
-        <div class="academic-icon">
-
-            <img
-                src="/icons/orcid.svg"
-                alt="ORCID"
-                class="academic-logo">
-
-        </div>
-
-        <div class="academic-info">
-
-            <span class="academic-label">
-                Identificador académico
-            </span>
+            <span class="academic-number">001</span>
 
             <span class="academic-name">
                 ORCID
             </span>
 
-        </div>
-
-        <div class="academic-arrow">
-            ↗
-        </div>
-
-    </a>
-
-    {{ end }}
-
-
-    {{ with .Site.Params.academic.academia }}
-
-    <a href="{{ . }}"
-       class="academic-link"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <div class="academic-icon">
-
-            <img
-                src="/icons/academia.svg"
-                alt="Academia.edu"
-                class="academic-logo">
-
-        </div>
-
-        <div class="academic-info">
-
-            <span class="academic-label">
-                Perfil académico
+            <span class="academic-arrow">
+                ?
             </span>
+
+        </a>
+
+        {{ end }}
+
+
+        {{ with .Site.Params.academic.academia }}
+
+        <a href="{{ . }}"
+           class="academic-link"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="academic-number">002</span>
 
             <span class="academic-name">
                 Academia.edu
             </span>
 
-        </div>
-
-        <div class="academic-arrow">
-            ↗
-        </div>
-
-    </a>
-
-    {{ end }}
-
-
-    {{ with .Site.Params.academic.researchgate }}
-
-    <a href="{{ . }}"
-       class="academic-link"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <div class="academic-icon">
-
-            <img
-                src="/icons/researchgate.svg"
-                alt="ResearchGate"
-                class="academic-logo">
-
-        </div>
-
-        <div class="academic-info">
-
-            <span class="academic-label">
-                Perfil e investigación
+            <span class="academic-arrow">
+                ?
             </span>
+
+        </a>
+
+        {{ end }}
+
+
+        {{ with .Site.Params.academic.researchgate }}
+
+        <a href="{{ . }}"
+           class="academic-link"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="academic-number">003</span>
 
             <span class="academic-name">
                 ResearchGate
             </span>
 
-        </div>
-
-        <div class="academic-arrow">
-            ↗
-        </div>
-
-    </a>
-
-    {{ end }}
-
-
-    {{ with .Site.Params.academic.linkedin }}
-
-    <a href="{{ . }}"
-       class="academic-link"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <div class="academic-icon">
-
-            <img
-                src="/icons/linkedin.svg"
-                alt="LinkedIn"
-                class="academic-logo">
-
-        </div>
-
-        <div class="academic-info">
-
-            <span class="academic-label">
-                Perfil profesional
+            <span class="academic-arrow">
+                ?
             </span>
+
+        </a>
+
+        {{ end }}
+
+
+        {{ with .Site.Params.academic.linkedin }}
+
+        <a href="{{ . }}"
+           class="academic-link"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="academic-number">004</span>
 
             <span class="academic-name">
                 LinkedIn
             </span>
 
-        </div>
+            <span class="academic-arrow">
+                ?
+            </span>
 
-        <div class="academic-arrow">
-            ↗
-        </div>
+        </a>
 
-    </a>
+        {{ end }}
 
-    {{ end }}
 
-</div>
+        {{ with .Site.Params.academic.scholar }}
+
+        <a href="{{ . }}"
+           class="academic-link"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <span class="academic-number">005</span>
+
+            <span class="academic-name">
+                Google Scholar
+            </span>
+
+            <span class="academic-arrow">
+                ?
+            </span>
+
+        </a>
+
+        {{ end }}
+
+    </div>
 
 </section>
 
@@ -1452,303 +1414,6 @@
 
 }
 
-
-.academic-logo {
-
-    display: block;
-
-    width: 42px;
-
-    height: 42px;
-
-    object-fit: contain;
-
-    flex-shrink: 0;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-
-}
-
-
-.academic-link:hover .academic-logo {
-
-    transform:
-        scale(1.08);
-
-    opacity:
-        0.95;
-
-}
-
-
-@media (max-width: 700px) {
-
-    .academic-logo {
-
-        width:
-            40px;
-
-        height:
-            40px;
-
-    }
-
-}
-
-/* =========================================
-   PRESENCIA ACADÉMICA
-   ========================================= */
-
-.academic-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    border-top:
-        1px solid var(--line);
-
-    border-left:
-        1px solid var(--line);
-
-}
-
-
-.academic-link {
-
-    display: grid;
-
-    grid-template-columns:
-        60px 1fr 35px;
-
-    gap:
-        25px;
-
-    align-items:
-        center;
-
-    min-height:
-        145px;
-
-    padding:
-        32px;
-
-    border-right:
-        1px solid var(--line);
-
-    border-bottom:
-        1px solid var(--line);
-
-    transition:
-        background 0.25s ease,
-        padding 0.25s ease;
-
-}
-
-
-.academic-link:hover {
-
-    background:
-        #11110F;
-
-    padding-left:
-        42px;
-
-}
-
-
-.academic-icon {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        48px;
-
-    height:
-        48px;
-
-}
-
-
-.academic-logo {
-
-    display:
-        block;
-
-    width:
-        48px;
-
-    height:
-        48px;
-
-    object-fit:
-        contain;
-
-    transition:
-        transform 0.25s ease;
-
-}
-
-
-.academic-link:hover
-.academic-logo {
-
-    transform:
-        scale(1.08);
-
-}
-
-
-.academic-info {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        5px;
-
-}
-
-
-.academic-label {
-
-    color:
-        var(--muted);
-
-    font-size:
-        9px;
-
-    font-weight:
-        600;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.academic-name {
-
-    color:
-        var(--foreground);
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size:
-        29px;
-
-    line-height:
-        1;
-
-    font-weight:
-        500;
-
-    letter-spacing:
-        -0.02em;
-
-}
-
-
-.academic-arrow {
-
-    color:
-        var(--muted);
-
-    font-size:
-        22px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-
-}
-
-
-.academic-link:hover
-.academic-arrow {
-
-    color:
-        var(--accent);
-
-    transform:
-        translate(4px, -4px);
-
-}
-
-
-@media (max-width: 700px) {
-
-    .academic-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .academic-link {
-
-        grid-template-columns:
-            55px 1fr 30px;
-
-        gap:
-            20px;
-
-        min-height:
-            125px;
-
-        padding:
-            28px 20px;
-
-    }
-
-
-    .academic-link:hover {
-
-        padding-left:
-            30px;
-
-    }
-
-
-    .academic-logo {
-
-        width:
-            42px;
-
-        height:
-            42px;
-
-    }
-
-
-    .academic-name {
-
-        font-size:
-            26px;
-
-    }
-
-}
 </style>
 
 <section class="section">
