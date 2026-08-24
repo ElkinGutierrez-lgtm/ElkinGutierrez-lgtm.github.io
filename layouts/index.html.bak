@@ -239,32 +239,9 @@
 
         /* =========================================
            HERO
-           ========================================= */        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1;
-        }
+           ========================================= */
 
-
-                .hero-photo {
-            width: 220px;
-            height: 280px;
-            margin-bottom: 0;
-            overflow: hidden;
-            border-radius: 4px;
-            justify-self: end;
-            grid-column: 2;
-            grid-row: 1 / span 4;
-        }
-
-        .hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-.hero {
+        .hero {
 
             min-height:
                 calc(100vh - 77px);
@@ -736,23 +713,7 @@
            MOBILE
            ========================================= */
 
-                @media (max-width: 800px) {
-
-            .hero {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .hero-photo {
-                order: -1;
-                align-self: center;
-                margin-bottom: 40px;
-            }
-
-        }
-
-@media (max-width: 700px) {
+        @media (max-width: 700px) {
 
             .site-header {
 
@@ -773,33 +734,10 @@
 
                 flex-wrap: wrap;
 
-            }        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1;
-        }
+            }
 
 
-
-                    .hero-photo {
-            width: 220px;
-            height: 280px;
-            margin-bottom: 0;
-            overflow: hidden;
-            border-radius: 4px;
-            justify-self: end;
-            grid-column: 2;
-            grid-row: 1 / span 4;
-        }
-
-        .hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-.hero {
+            .hero {
 
                 min-height: 80vh;
 
@@ -889,67 +827,7 @@
 
         }
 
-    
-        /* =========================================
-           HERO — FINAL DESKTOP / MOBILE LAYOUT
-           ========================================= */
-
-        .hero {
-            display: grid !important;
-            grid-template-columns: minmax(0, 1fr) 260px !important;
-            column-gap: 90px !important;
-            align-items: center !important;
-            min-height: calc(100vh - 77px) !important;
-            padding: 8vw 5vw !important;
-        }
-
-        .hero-photo {
-            grid-column: 2 !important;
-            grid-row: 1 / span 4 !important;
-            justify-self: end !important;
-            align-self: center !important;
-            transform: translateX(-70px) !important;
-            order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
-            margin: 0 !important;
-            overflow: hidden !important;
-            border-radius: 4px !important;
-        }
-
-        .hero-photo img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            display: block !important;
-        }
-
-        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1 !important;
-        }
-
-        @media (max-width: 800px) {
-
-            .hero {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                min-height: auto !important;
-            }
-
-            .hero-photo {
-                order: -1 !important;
-                align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
-                margin: 0 auto 40px auto !important;
-            }
-
-        }
-
-</style>
+    </style>
 
 </head>
 
@@ -966,50 +844,27 @@
 
     <nav aria-label="Navegación principal">
 
-    <a href="{{ "/investigacion/" | relLangURL }}">
-        {{ i18n "research" }}
-    </a>
+        <a href="/investigacion/">
+            Investigación
+        </a>
 
-    <a href="{{ "/publicaciones/" | relLangURL }}">
-        {{ i18n "publications" }}
-    </a>
+        <a href="/publicaciones/">
+            Publicaciones
+        </a>
 
-    <a href="{{ "/cv/" | relLangURL }}">
-        {{ i18n "cv" }}
-    </a>
+        <a href="/cv/">
+            CV
+        </a>
 
-    <a href="{{ "/sobre-mi/" | relLangURL }}">
-        {{ i18n "about" }}
-    </a>
+        <a href="/sobre-mi/">
+            Sobre mí
+        </a>
 
-    <a href="{{ "/contacto/" | relLangURL }}">
-        {{ i18n "contact" }}
-    </a>
+        <a href="/contacto/">
+            Contacto
+        </a>
 
-    <div class="language-switcher" aria-label="Language selection">
-
-    <a href="{{ "/" | relLangURL }}"
-       lang="es"
-       title="Español"
-       class="{{ if eq .Language.Lang "es" }}current{{ end }}">ES</a>
-
-    <span class="language-separator">/</span>
-
-    <a href="{{ "/en/" | relURL }}"
-       lang="en"
-       title="English"
-       class="{{ if eq .Language.Lang "en" }}current{{ end }}">EN</a>
-
-    <span class="language-separator">/</span>
-
-    <a href="{{ "/fr/" | relURL }}"
-       lang="fr"
-       title="Français"
-       class="{{ if eq .Language.Lang "fr" }}current{{ end }}">FR</a>
-
-</div>
-
-</nav>
+    </nav>
 
 </header>
 
@@ -1019,14 +874,7 @@
 
 <section class="hero">
 
-    <div class="hero-photo">
-        <img
-            src="{{ "/images/elkin.jpeg" | relURL }}"
-            alt="Elkin Gutiérrez"
-            loading="eager"
-        >
-    </div>
-<div class="eyebrow">
+    <div class="eyebrow">
         {{ i18n "philosopher_researcher" }}
     </div>
 
@@ -1901,66 +1749,6 @@
     }
 
 }
-
-        /* =========================================
-           HERO — FINAL DESKTOP / MOBILE LAYOUT
-           ========================================= */
-
-        .hero {
-            display: grid !important;
-            grid-template-columns: minmax(0, 1fr) 260px !important;
-            column-gap: 90px !important;
-            align-items: center !important;
-            min-height: calc(100vh - 77px) !important;
-            padding: 8vw 5vw !important;
-        }
-
-        .hero-photo {
-            grid-column: 2 !important;
-            grid-row: 1 / span 4 !important;
-            justify-self: end !important;
-            align-self: center !important;
-            transform: translateX(-70px) !important;
-            order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
-            margin: 0 !important;
-            overflow: hidden !important;
-            border-radius: 4px !important;
-        }
-
-        .hero-photo img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            display: block !important;
-        }
-
-        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1 !important;
-        }
-
-        @media (max-width: 800px) {
-
-            .hero {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                min-height: auto !important;
-            }
-
-            .hero-photo {
-                order: -1 !important;
-                align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
-                margin: 0 auto 40px auto !important;
-            }
-
-        }
-
 </style>
 
 <section class="section">

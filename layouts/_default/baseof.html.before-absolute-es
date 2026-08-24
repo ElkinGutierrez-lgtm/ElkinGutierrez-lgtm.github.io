@@ -486,21 +486,26 @@
         </a>
 
 
-<div class="language-switcher" aria-label="Language selection">
+        <div class="language-switcher" aria-label="Language selection">
 
-{{ range .AllTranslations }}
+    <a href="/"
+       lang="es"
+       title="Español"
+       class="{{ if eq .Language.Lang "es" }}current{{ end }}">ES</a>
 
-    <a href="{{ .RelPermalink }}"
-       lang="{{ .Language.Lang }}"
-       class="{{ if eq $.Language.Lang .Language.Lang }}current{{ end }}">
-       {{ upper .Language.Lang }}
-    </a>
-
-    {{ if ne .Language.Lang "fr" }}
     <span class="language-separator">/</span>
-    {{ end }}
 
-{{ end }}
+    <a href="{{ "/en/" | relURL }}"
+       lang="en"
+       title="English"
+       class="{{ if eq .Language.Lang "en" }}current{{ end }}">EN</a>
+
+    <span class="language-separator">/</span>
+
+    <a href="{{ "/fr/" | relURL }}"
+       lang="fr"
+       title="Français"
+       class="{{ if eq .Language.Lang "fr" }}current{{ end }}">FR</a>
 
 </div>
 

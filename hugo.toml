@@ -1,23 +1,49 @@
 baseURL = "https://ElkinGutierrez-lgtm.github.io/"
-locale = "es-co"
-title = "Elkin Gutiérrez — Filósofo e investigador"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
 
 enableRobotsTXT = true
 
+title = "Elkin Gutiérrez — Filósofo e investigador"
+
+[languages]
+
+    [languages.es]
+        label = "Español"
+        locale = "es-CO"
+        weight = 1
+        title = "Elkin Gutiérrez — Filósofo e investigador"
+
+        [languages.es.params]
+            author = "Elkin Gutiérrez"
+            description = "Filósofo e investigador. Individuación, filosofía de la técnica, fenomenología y teoría jurídica."
+
+    [languages.en]
+        label = "English"
+        locale = "en"
+        weight = 2
+        title = "Elkin Gutiérrez — Philosopher and Researcher"
+
+        [languages.en.params]
+            author = "Elkin Gutiérrez"
+            description = "Philosopher and researcher. Individuation, philosophy of technology, phenomenology and legal theory."
+
+    [languages.fr]
+        label = "Français"
+        locale = "fr"
+        weight = 3
+        title = "Elkin Gutiérrez — Philosophe et chercheur"
+
+        [languages.fr.params]
+            author = "Elkin Gutiérrez"
+            description = "Philosophe et chercheur. Individuation, philosophie de la technique, phénoménologie et théorie juridique."
+
+
 [params]
-
-    author = "Elkin Gutiérrez"
-
-    description = "Filósofo e investigador. Individuación, filosofía de la técnica, fenomenología y teoría jurídica."
 
     mainColor = "#0A0A09"
 
     accentColor = "#7A2638"
-
-
-    # =========================================
-    # PERFIL ACADÉMICO
-    # =========================================
 
     [params.academic]
 

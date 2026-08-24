@@ -910,8 +910,8 @@
             align-self: center !important;
             transform: translateX(-70px) !important;
             order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
+            width: 260px !important;
+            height: 330px !important;
             margin: 0 !important;
             overflow: hidden !important;
             border-radius: 4px !important;
@@ -942,8 +942,8 @@
             .hero-photo {
                 order: -1 !important;
                 align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
+                width: 260px !important;
+                height: 330px !important;
                 margin: 0 auto 40px auto !important;
             }
 
@@ -1922,8 +1922,8 @@
             align-self: center !important;
             transform: translateX(-70px) !important;
             order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
+            width: 260px !important;
+            height: 330px !important;
             margin: 0 !important;
             overflow: hidden !important;
             border-radius: 4px !important;
@@ -1954,8 +1954,8 @@
             .hero-photo {
                 order: -1 !important;
                 align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
+                width: 260px !important;
+                height: 330px !important;
                 margin: 0 auto 40px auto !important;
             }
 

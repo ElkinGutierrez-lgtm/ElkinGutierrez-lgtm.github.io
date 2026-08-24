@@ -889,67 +889,7 @@
 
         }
 
-    
-        /* =========================================
-           HERO — FINAL DESKTOP / MOBILE LAYOUT
-           ========================================= */
-
-        .hero {
-            display: grid !important;
-            grid-template-columns: minmax(0, 1fr) 260px !important;
-            column-gap: 90px !important;
-            align-items: center !important;
-            min-height: calc(100vh - 77px) !important;
-            padding: 8vw 5vw !important;
-        }
-
-        .hero-photo {
-            grid-column: 2 !important;
-            grid-row: 1 / span 4 !important;
-            justify-self: end !important;
-            align-self: center !important;
-            transform: translateX(-70px) !important;
-            order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
-            margin: 0 !important;
-            overflow: hidden !important;
-            border-radius: 4px !important;
-        }
-
-        .hero-photo img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            display: block !important;
-        }
-
-        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1 !important;
-        }
-
-        @media (max-width: 800px) {
-
-            .hero {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                min-height: auto !important;
-            }
-
-            .hero-photo {
-                order: -1 !important;
-                align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
-                margin: 0 auto 40px auto !important;
-            }
-
-        }
-
-</style>
+    </style>
 
 </head>
 
@@ -1901,66 +1841,6 @@
     }
 
 }
-
-        /* =========================================
-           HERO — FINAL DESKTOP / MOBILE LAYOUT
-           ========================================= */
-
-        .hero {
-            display: grid !important;
-            grid-template-columns: minmax(0, 1fr) 260px !important;
-            column-gap: 90px !important;
-            align-items: center !important;
-            min-height: calc(100vh - 77px) !important;
-            padding: 8vw 5vw !important;
-        }
-
-        .hero-photo {
-            grid-column: 2 !important;
-            grid-row: 1 / span 4 !important;
-            justify-self: end !important;
-            align-self: center !important;
-            transform: translateX(-70px) !important;
-            order: initial !important;
-            width: 290px !important;
-            height: 370px !important;
-            margin: 0 !important;
-            overflow: hidden !important;
-            border-radius: 4px !important;
-        }
-
-        .hero-photo img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: contain !important;
-            display: block !important;
-        }
-
-        .hero > .eyebrow,
-        .hero > h1,
-        .hero > .hero-description {
-            grid-column: 1 !important;
-        }
-
-        @media (max-width: 800px) {
-
-            .hero {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                min-height: auto !important;
-            }
-
-            .hero-photo {
-                order: -1 !important;
-                align-self: center !important;
-                width: 290px !important;
-                height: 370px !important;
-                margin: 0 auto 40px auto !important;
-            }
-
-        }
-
 </style>
 
 <section class="section">
