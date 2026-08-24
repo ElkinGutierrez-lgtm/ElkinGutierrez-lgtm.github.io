@@ -3,23 +3,25 @@
 
 <head>
 
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon"
+          href="{{ "favicon.svg" | relURL }}"
+          type="image/svg+xml">
+
     <title>
         {{ if .Title }}
-            {{ .Title }} — Elkin Gutiérrez
+            {{ .Title }} — {{ .Site.Params.author }}
         {{ else }}
-            Elkin Gutiérrez — Filósofo e investigador
+            {{ .Site.Title }}
         {{ end }}
     </title>
 
     <meta name="description"
-          content="{{ with .Description }}{{ . }}{{ else }}Elkin Gutiérrez. Filósofo e investigador.{{ end }}">
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
     <style>
 
@@ -51,6 +53,10 @@
             text-decoration: none;
         }
 
+        /* =========================
+           HEADER
+           ========================= */
+
         .site-header {
             display: flex;
             justify-content: space-between;
@@ -79,6 +85,8 @@
         }
 
         nav a {
+            position: relative;
+
             color: var(--muted);
 
             font-size: 12px;
@@ -88,9 +96,28 @@
             transition: color 0.2s ease;
         }
 
-        nav a:hover {
-            color: var(--accent);
+        nav a:hover,
+        nav a.active {
+            color: var(--foreground);
         }
+
+        nav a.active::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: -9px;
+
+            height: 1px;
+
+            background: var(--accent);
+        }
+
+        /* =========================
+           PAGE
+           ========================= */
 
         .page {
             max-width: 1200px;
@@ -160,6 +187,10 @@
             margin-bottom: 10px;
         }
 
+        /* =========================
+           FOOTER
+           ========================= */
+
         footer {
             display: flex;
             justify-content: space-between;
@@ -176,6 +207,10 @@
             text-transform: uppercase;
         }
 
+        /* =========================
+           MOBILE
+           ========================= */
+
         @media (max-width: 700px) {
 
             .site-header {
@@ -187,6 +222,10 @@
             nav {
                 gap: 15px;
                 flex-wrap: wrap;
+            }
+
+            nav a.active::after {
+                bottom: -6px;
             }
 
             .page {
@@ -213,29 +252,34 @@
 
 <header class="site-header">
 
-    <a href="/" class="brand">
+    <a href="{{ "/" | relURL }}" class="brand">
         ELKIN <span>GUTIÉRREZ</span>
     </a>
 
     <nav>
 
-        <a href="/investigacion/">
+        <a href="{{ "/investigacion/" | relURL }}"
+           class="{{ if eq .Section "investigacion" }}active{{ end }}">
             Investigación
         </a>
 
-        <a href="/publicaciones/">
+        <a href="{{ "/publicaciones/" | relURL }}"
+           class="{{ if eq .Section "publicaciones" }}active{{ end }}">
             Publicaciones
         </a>
 
-        <a href="/sobre-mi/">
+        <a href="{{ "/sobre-mi/" | relURL }}"
+           class="{{ if eq .Section "sobre-mi" }}active{{ end }}">
             Sobre mí
         </a>
 
-        <a href="/cv/">
+        <a href="{{ "/cv/" | relURL }}"
+           class="{{ if eq .Section "cv" }}active{{ end }}">
             CV
         </a>
 
-        <a href="/contacto/">
+        <a href="{{ "/contacto/" | relURL }}"
+           class="{{ if eq .Section "contacto" }}active{{ end }}">
             Contacto
         </a>
 
@@ -256,7 +300,7 @@
 <footer>
 
     <span>
-        © 2026 Elkin Gutiérrez
+        © 2026 {{ .Site.Params.author }}
     </span>
 
     <span>
