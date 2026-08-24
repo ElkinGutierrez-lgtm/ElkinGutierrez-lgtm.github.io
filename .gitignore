@@ -1,3 +1,6 @@
-/public/
-/resources/
-.hugo_build.lock
+public/
+resources/
+backup/
+*.bak
+*.backup
+*.before-*
