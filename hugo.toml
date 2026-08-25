@@ -65,3 +65,15 @@ title = "Elkin Gutiérrez — Filósofo e investigador"
         [markup.goldmark.renderer]
 
             unsafe = true
+
+[params.public]
+
+    youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
+
+    instagram = "https://www.instagram.com/elkngutierrez"
+
+    facebook = "https://www.facebook.com/elkin.gutierrez.370/"
+
+    tiktok = "https://www.tiktok.com/@elkingutierrez08"
+
+    x = "https://x.com/elkinhgutierrez"
