@@ -20,6 +20,43 @@
         {{ end }}
     </title>
 
+
+    <meta property="og:title"
+          content="{{ .Title }}">
+
+    <meta property="og:description"
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <meta property="og:url"
+          content="{{ .Permalink }}">
+
+    <meta property="og:type"
+          content="article">
+
+    <meta property="og:site_name"
+          content="{{ .Site.Title }}">
+
+    <meta property="og:image"
+          content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/elkin.jpeg" | absURL }}{{ end }}">
+
+    <meta name="twitter:card"
+          content="summary">
+
+    <meta name="twitter:title"
+          content="{{ .Title }}">
+
+    <meta name="twitter:description"
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <meta name="twitter:url"
+          content="{{ .Permalink }}">
+
+    <meta name="twitter:image"
+          content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/elkin.jpeg" | absURL }}{{ end }}">
+
+    <meta name="author"
+          content="{{ .Site.Params.author }}">
+
     <meta name="description"
           content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
@@ -192,10 +229,6 @@
                 color 0.2s ease;
 
         }
-
-
-        .language-switcher img
-
         .language-switcher a:hover {
 
             color: var(--foreground);
