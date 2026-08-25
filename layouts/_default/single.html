@@ -1,4 +1,4 @@
-﻿{{ define "main" }}
+{{ define "main" }}
 
 <section class="page">
 
@@ -238,19 +238,20 @@
    ===================================================== */
 
 .publication-content {
+      max-width:
+          780px;
 
-    max-width:
-        780px;
+      color:
+          var(--foreground);
 
-    color:
-        var(--foreground);
+      font-size:
+          17px;
 
-    font-size:
-        17px;
+      line-height:
+          1.85;
 
-    line-height:
-        1.85;
-
+      text-align:
+          justify;
 }
 
 
@@ -359,15 +360,29 @@
 
 
     .publication-content {
+      max-width:
+          780px;
 
-        font-size:
-            16px;
+      color:
+          var(--foreground);
 
-        line-height:
-            1.8;
+      font-size:
+          17px;
 
-    }
+      line-height:
+          1.85;
 
+      text-align:
+          justify;
+}
+
+}
+
+
+.publication-content h3{
+    padding-bottom:12px;
+    border-bottom:1px solid var(--accent);
+    margin-bottom:30px;
 }
 
 </style>

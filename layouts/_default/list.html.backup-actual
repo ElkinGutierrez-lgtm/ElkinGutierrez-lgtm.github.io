@@ -1,0 +1,278 @@
+{{ define "main" }}
+
+<section class="page">
+
+    <div class="page-eyebrow">
+        01 — Investigación
+    </div>
+
+    <h1 class="page-title">
+        {{ .Title }}
+    </h1>
+
+    <div class="page-intro">
+        {{ .Content }}
+    </div>
+
+    <section class="research-program">
+
+    <div class="program-eyebrow">
+        Programa de investigación
+    </div>
+
+    <div class="program-content">
+
+        <h2 class="program-title">
+            Existir en el problema
+        </h2>
+
+        <p class="program-description">
+            Una investigación sobre las condiciones mediante las cuales algo llega a constituirse,
+            persiste, se transforma y deja de ser lo que era.
+        </p>
+
+        <p class="program-justification">
+            Las nueve líneas del programa pueden leerse como diferentes modos de abordar la
+            <strong>génesis, orientación, estabilización y transformación de los problemas</strong>,
+            así como las formas de existencia que emergen de sus resoluciones provisionales.
+        </p>
+
+        <a href="{{ "/programa-de-investigacion/" | relLangURL }}" class="program-action">
+
+            <span class="program-action-arrow">→</span>
+
+            <span class="program-action-text">
+                Explorar el programa
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<div class="research-divider">
+
+    <span>Investigaciones</span>
+
+</div>
+
+<div class="research-divider">
+
+    <span>Investigaciones</span>
+
+</div>
+
+<div class="research-list">
+
+        {{ range .Pages.ByWeight }}
+
+        <a href="{{ .RelPermalink }}" class="research-card">
+
+            <div class="research-number">
+                {{ printf "%03d" .Weight }}
+            </div>
+
+            <div class="research-main">
+
+                <h2>
+                    {{ .Title }}
+                </h2>
+
+                <p>
+                    {{ .Description }}
+                </p>
+
+            </div>
+
+            <div class="research-arrow">
+                →
+            </div>
+
+        </a>
+
+        {{ end }}
+
+    </div>
+
+</section>
+
+
+<style>
+
+.page-intro {
+    max-width: 720px;
+    margin-bottom: 80px;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.research-list {
+    border-top: 1px solid var(--line);
+}
+
+.research-card {
+    display: grid;
+    grid-template-columns: 80px 1fr 50px;
+    align-items: center;
+    gap: 30px;
+    padding: 42px 20px;
+    border-bottom: 1px solid var(--line);
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+}
+
+.research-card:hover {
+    background: #11110F;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.research-number {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.research-main h2 {
+    margin: 0 0 10px;
+    color: var(--foreground);
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.research-main p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.research-arrow {
+    color: var(--muted);
+    font-size: 24px;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.research-card:hover .research-arrow {
+    color: var(--accent);
+    transform: translateX(5px);
+}
+
+@media (max-width: 700px) {
+
+    .research-program {
+        margin-top: 85px;
+        padding-top: 45px;
+        padding-bottom: 75px;
+    }
+
+    .program-title {
+        font-size: 48px;
+    }
+
+    .program-description {
+        font-size: 17px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+
+    .program-justification {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .program-action {
+        margin-top: 5px;
+    }
+
+    .research-divider {
+        margin-bottom: 40px;
+    }
+
+
+    .research-card {
+        grid-template-columns: 45px 1fr 25px;
+        gap: 15px;
+        padding: 30px 10px;
+    }
+
+    .research-card:hover {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .research-main h2 {
+        font-size: 25px;
+    }
+
+    .research-main p {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .research-program {
+        margin-top: 85px;
+        padding-top: 45px;
+        padding-bottom: 75px;
+    }
+
+    .program-title {
+        font-size: 48px;
+    }
+
+    .program-description {
+        font-size: 17px;
+        line-height: 1.7;
+        text-align: justify;
+    }
+
+    .program-justification {
+        font-size: 15px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .program-action {
+        margin-top: 5px;
+    }
+
+    .research-divider {
+        margin-bottom: 40px;
+    }
+
+
+    .research-program {
+        margin-top: 80px;
+        padding-top: 40px;
+        padding-bottom: 65px;
+    }
+
+    .program-title {
+        font-size: 46px;
+    }
+
+    .program-description {
+        font-size: 17px;
+    }
+
+    .program-justification {
+        font-size: 15px;
+    }
+
+}
+
+</style>
+
+{{ end }}
