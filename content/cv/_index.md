@@ -1,64 +1,56 @@
-\---
+---
+title: "CV académica"
+layout: "cv"
+---
 
-title: "Curriculum Vitae"
+# CV académica
 
-description: "Curriculum académico de Elkin Gutiérrez."
+Trayectoria académica, investigación, publicaciones, docencia y actividad profesional.
 
-\---
+## 01 — Formación académica
 
+Formación universitaria y estudios de posgrado.
 
+## 02 — Investigación
 
-\## Formación académica
+Líneas, problemas y campos de investigación.
 
+## 03 — Publicaciones
 
+Libros, artículos, capítulos, reseñas y otras publicaciones.
 
-Información sobre formación universitaria, estudios de posgrado y especialización.
+## 04 — Docencia
 
+Experiencia docente, asignaturas y actividades de formación.
 
+## 05 — Dirección y formación
 
-\## Experiencia académica
+Dirección de tesis, trabajos de grado, tutorías y formación de investigadores.
 
+## 06 — Congresos y conferencias
 
+Ponencias, conferencias, coloquios, seminarios y participación académica.
 
-Información sobre docencia, investigación, participación universitaria y proyectos académicos.
+## 07 — Proyectos de investigación
 
+Proyectos individuales, colectivos y programas de investigación.
 
+## 08 — Experiencia académica
 
-\## Líneas de investigación
+Cargos, estancias, colaboraciones y experiencia en instituciones académicas.
 
+## 09 — Distinciones y becas
 
+Premios, becas, reconocimientos y distinciones académicas.
 
-\- Individuación y ontogénesis
+## 10 — Idiomas
 
-\- Filosofía de la técnica
+Idiomas y competencias lingüísticas.
 
-\- Fenomenología
+## 11 — Afiliaciones académicas
 
-\- Teoría jurídica
+Grupos, asociaciones, redes e instituciones académicas.
 
-\- Identidad e institución
+## 12 — CV completo
 
-
-
-\## Publicaciones
-
-
-
-La producción académica se encuentra organizada en la sección de \[Publicaciones](/publicaciones/).
-
-
-
-\## Proyectos de investigación
-
-
-
-Información sobre proyectos, investigaciones en curso y líneas de trabajo.
-
-
-
-\## Distinciones y actividades académicas
-
-
-
-Premios, becas, congresos, seminarios, conferencias y otras actividades académicas.
-
+Descarga del currículum académico completo en formato PDF.
