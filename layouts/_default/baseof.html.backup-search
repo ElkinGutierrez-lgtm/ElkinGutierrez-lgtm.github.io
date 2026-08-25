@@ -57,9 +57,6 @@
     <meta name="author"
           content="{{ .Site.Params.author }}">
 
-    <link
-        rel="stylesheet"
-        href="{{ "pagefind/pagefind-ui.css" | relURL }}">
     <meta name="description"
           content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
@@ -568,15 +565,13 @@
 </div>
 
 
-        {{ partial "search.html" . }}
-
     </nav>
 
 
 </header>
 
 
-<main data-pagefind-body>
+<main>
 
     {{ block "main" . }}
 
@@ -603,13 +598,7 @@
 </footer>
 
 
-    <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
 </body>
 
 </html>
-
-
-
-
-
 

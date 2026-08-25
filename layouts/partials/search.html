@@ -1,0 +1,440 @@
+﻿<div class="search-wrapper">
+
+    <button
+        type="button"
+        class="search-toggle"
+        aria-label="Buscar"
+        aria-expanded="false"
+        title="Buscar">
+
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+
+            <circle
+                cx="11"
+                cy="11"
+                r="6.5">
+            </circle>
+
+            <path
+                d="M16 16L21 21">
+            </path>
+
+        </svg>
+
+    </button>
+
+
+    <div
+        class="search-panel"
+        aria-hidden="true">
+
+        <div class="search-panel-inner">
+
+            <div class="search-heading">
+                Buscar
+            </div>
+
+            <div
+                id="pagefind-search"
+                class="pagefind-search">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<style>
+
+.search-wrapper {
+    position: relative;
+}
+
+
+.search-toggle {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 22px;
+
+    height: 22px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--muted);
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.search-toggle:hover {
+
+    color: var(--foreground);
+
+    transform: translateY(-1px);
+
+}
+
+
+.search-toggle svg {
+
+    width: 17px;
+
+    height: 17px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.5;
+
+}
+
+
+.search-panel {
+
+    position: fixed;
+
+    z-index: 1000;
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    padding: 120px 5vw 70px;
+
+    background: var(--background);
+
+    border-bottom: 1px solid var(--line);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-12px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+}
+
+
+.search-panel.open {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+.search-panel-inner {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+.search-heading {
+
+    margin-bottom: 28px;
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+.pagefind-search {
+
+    width: 100%;
+
+}
+
+
+/* Pagefind */
+
+.pagefind-ui {
+
+    --pagefind-ui-scale: 1;
+
+    --pagefind-ui-primary: var(--foreground);
+
+    --pagefind-ui-text: var(--foreground);
+
+    --pagefind-ui-background: transparent;
+
+    --pagefind-ui-border: var(--line);
+
+    --pagefind-ui-tag: var(--accent);
+
+}
+
+
+.pagefind-ui__search-input {
+
+    height: 58px !important;
+
+    padding:
+        0 18px !important;
+
+    border:
+        1px solid var(--line) !important;
+
+    border-radius: 0 !important;
+
+    background:
+        transparent !important;
+
+    color:
+        var(--foreground) !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-size: 16px !important;
+
+}
+
+
+.pagefind-ui__search-input::placeholder {
+
+    color: var(--muted) !important;
+
+}
+
+
+/* Icono de búsqueda de Pagefind */
+
+.pagefind-ui__search-input {
+    padding-left: 52px !important;
+}
+
+.pagefind-ui__form::before {
+    left: 18px !important;
+}
+
+
+.pagefind-ui__result {
+
+    border-bottom:
+        1px solid var(--line) !important;
+
+}
+
+
+.pagefind-ui__result-title {
+
+    color:
+        var(--foreground) !important;
+
+}
+
+
+.pagefind-ui__result-excerpt {
+
+    color:
+        var(--muted) !important;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .search-panel {
+
+        padding:
+            100px 5vw 50px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle =
+        document.querySelector(".search-toggle");
+
+    const panel =
+        document.querySelector(".search-panel");
+
+    if (!toggle || !panel) {
+        return;
+    }
+
+
+    function openSearch() {
+
+        panel.classList.add("open");
+
+        panel.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        setTimeout(function () {
+
+            const input =
+                panel.querySelector(
+                    ".pagefind-ui__search-input"
+                );
+
+            if (input) {
+                input.focus();
+            }
+
+        }, 100);
+
+    }
+
+
+    function closeSearch() {
+
+        panel.classList.remove("open");
+
+        panel.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        toggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    toggle.addEventListener(
+        "click",
+        function () {
+
+            if (
+                panel.classList.contains("open")
+            ) {
+                closeSearch();
+            } else {
+                openSearch();
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                panel.classList.contains("open")
+            ) {
+
+                closeSearch();
+
+                toggle.focus();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                panel.classList.contains("open") &&
+                !panel.contains(event.target) &&
+                !toggle.contains(event.target)
+            ) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+    if (
+        typeof PagefindUI !== "undefined"
+    ) {
+
+        new PagefindUI({
+
+            element:
+                "#pagefind-search",
+
+            showImages: false,
+
+            translations: {
+
+                placeholder:
+                    "Buscar en el sitio…",
+
+                zero_results:
+                    "No se encontraron resultados",
+
+                many_results:
+                    "resultados",
+
+                one_result:
+                    "resultado"
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
+
+
