@@ -40,8 +40,20 @@ jobs:
           hugo-version: '0.165.0'
           extended: true
 
-      - name: Build
+      - name: Build Hugo
         run: hugo --gc --minify
+
+      - name: Install Pagefind
+        run: npm install -g pagefind@1.5.2
+
+      - name: Build Pagefind index
+        run: pagefind --site public
+
+      - name: Verify Pagefind
+        run: |
+          test -f public/pagefind/pagefind-ui.js
+          test -f public/pagefind/pagefind-ui.css
+          echo "Pagefind generado correctamente."
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
