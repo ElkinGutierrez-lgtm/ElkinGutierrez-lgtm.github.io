@@ -13,5 +13,6 @@ Mis líneas principales de trabajo son:
 - Filosofía de la técnica
 - Fenomenología
 - Teoría jurídica
+- Psicología, subjetividad e individuación
 
-Estas líneas no constituyen campos aislados. Se cruzan en torno a problemas de ontogénesis, existencia, tecnicidad, identidad, normatividad e institución.
+Estas líneas no constituyen campos aislados. Se cruzan en torno a problemas de ontogénesis, existencia, subjetividad, tecnicidad, identidad, afectividad, normatividad e institución.
