@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -1585,6 +1585,43 @@
 
                 <span class="academic-name">
                     YouTube
+                </span>
+
+            </div>
+
+            <div class="academic-arrow">
+                ↗
+            </div>
+
+        </a>
+
+        {{ end }}
+
+
+        {{ with .Site.Params.public.spotify }}
+
+        <a href="{{ . }}"
+           class="academic-link public-link"
+           target="_blank"
+           rel="noopener noreferrer">
+
+            <div class="academic-icon">
+
+                <img
+                    src="/icons/spotify.svg"
+                    alt="Spotify"
+                    class="academic-logo">
+
+            </div>
+
+            <div class="academic-info">
+
+                <span class="academic-label">
+                    Podcast
+                </span>
+
+                <span class="academic-name">
+                    Spotify
                 </span>
 
             </div>
