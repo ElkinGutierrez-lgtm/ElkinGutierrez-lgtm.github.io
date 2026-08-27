@@ -1,24 +1,48 @@
 baseURL = "https://ElkinGutierrez-lgtm.github.io/"
-locale = "es-co"
-title = "Elkin Gutiérrez — Filósofo e investigador"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
 
 enableRobotsTXT = true
 
+title = "Elkin GutiÃ©rrez â€” FilÃ³sofo e investigador"
+
+[languages]
+
+    [languages.es]
+        label = "EspaÃ±ol"
+        locale = "es-CO"
+        weight = 1
+        title = "Elkin GutiÃ©rrez â€” FilÃ³sofo e investigador"
+
+        [languages.es.params]
+            author = "Elkin GutiÃ©rrez"
+            description = "FilÃ³sofo e investigador. IndividuaciÃ³n, filosofÃ­a de la tÃ©cnica, fenomenologÃ­a y teorÃ­a jurÃ­dica."
+
+    [languages.en]
+        label = "English"
+        locale = "en"
+        weight = 2
+        title = "Elkin GutiÃ©rrez â€” Philosopher and Researcher"
+
+        [languages.en.params]
+            author = "Elkin GutiÃ©rrez"
+            description = "Philosopher and researcher. Individuation, philosophy of technology, phenomenology and legal theory."
+
+    [languages.fr]
+        label = "FranÃ§ais"
+        locale = "fr"
+        weight = 3
+        title = "Elkin GutiÃ©rrez â€” Philosophe et chercheur"
+
+        [languages.fr.params]
+            author = "Elkin GutiÃ©rrez"
+            description = "Philosophe et chercheur. Individuation, philosophie de la technique, phÃ©nomÃ©nologie et thÃ©orie juridique."
 
 [params]
-
-    author = "Elkin Gutiérrez"
-
-    description = "Filósofo e investigador. Individuación, filosofía de la técnica, fenomenología y teoría jurídica."
 
     mainColor = "#0A0A09"
 
     accentColor = "#7A2638"
-
-
-    # =========================================
-    # PERFIL ACADÉMICO
-    # =========================================
 
     [params.academic]
 
@@ -28,19 +52,29 @@ enableRobotsTXT = true
 
         researchgate = "https://www.researchgate.net/profile/Elkin-Gutierrez-6"
 
-        linkedin = "https://www.linkedin.com/in/elkin-gutiérrez"
+        linkedin = "https://www.linkedin.com/in/elkin-gutierrez"
 
         scholar = ""
-
-
-# =========================================
-# MARKUP
-# =========================================
 
 [markup]
 
     [markup.goldmark]
 
         [markup.goldmark.renderer]
-
             unsafe = true
+
+[params.public]
+
+    youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
+
+    spotify = "https://open.spotify.com/show/7vBEa4oHRXdcJ32w6Yy3NK?si=cWbDdovsSVmqdd7EoFmdYQ"
+
+    instagram = "https://www.instagram.com/elkngutierrez"
+
+    facebook = "https://www.facebook.com/elkin.gutierrez.370/"
+
+    tiktok = "https://www.tiktok.com/@elkingutierrez08"
+
+    x = "https://x.com/elkinhgutierrez"
+
+    bluesky = "https://bsky.app/profile/elkinhgutierrez.bsky.social"

@@ -4,40 +4,39 @@ defaultContentLanguageInSubdir = false
 
 enableRobotsTXT = true
 
-title = "Elkin GutiÃ©rrez â€” FilÃ³sofo e investigador"
+title = "Elkin Gutiérrez — Filósofo e investigador"
 
 [languages]
 
     [languages.es]
-        label = "EspaÃ±ol"
+        label = "Español"
         locale = "es-CO"
         weight = 1
-        title = "Elkin GutiÃ©rrez â€” FilÃ³sofo e investigador"
+        title = "Elkin Gutiérrez — Filósofo e investigador"
 
         [languages.es.params]
-            author = "Elkin GutiÃ©rrez"
-            description = "FilÃ³sofo e investigador. IndividuaciÃ³n, filosofÃ­a de la tÃ©cnica, fenomenologÃ­a y teorÃ­a jurÃ­dica."
+            author = "Elkin Gutiérrez"
+            description = "Filósofo e investigador. Individuación, filosofía de la técnica, fenomenología y teoría jurídica."
 
     [languages.en]
         label = "English"
         locale = "en"
         weight = 2
-        title = "Elkin GutiÃ©rrez â€” Philosopher and Researcher"
+        title = "Elkin Gutiérrez — Philosopher and Researcher"
 
         [languages.en.params]
-            author = "Elkin GutiÃ©rrez"
+            author = "Elkin Gutiérrez"
             description = "Philosopher and researcher. Individuation, philosophy of technology, phenomenology and legal theory."
 
     [languages.fr]
-        label = "FranÃ§ais"
+        label = "Français"
         locale = "fr"
         weight = 3
-        title = "Elkin GutiÃ©rrez â€” Philosophe et chercheur"
+        title = "Elkin Gutiérrez — Philosophe et chercheur"
 
         [languages.fr.params]
-            author = "Elkin GutiÃ©rrez"
-            description = "Philosophe et chercheur. Individuation, philosophie de la technique, phÃ©nomÃ©nologie et thÃ©orie juridique."
-
+            author = "Elkin Gutiérrez"
+            description = "Philosophe et chercheur. Individuation, philosophie de la technique, phénoménologie et théorie juridique."
 
 [params]
 
@@ -53,33 +52,20 @@ title = "Elkin GutiÃ©rrez â€” FilÃ³sofo e investigador"
 
         researchgate = "https://www.researchgate.net/profile/Elkin-Gutierrez-6"
 
-        linkedin = "https://www.linkedin.com/in/elkin-gutiÃ©rrez"
+        linkedin = "https://www.linkedin.com/in/elkin-gutierrez"
 
-        scholar = ""
+    [params.public]
 
+        youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
 
-[markup]
+        spotify = "https://open.spotify.com/show/7vBEa4oHRXdcJ32w6Yy3NK?si=cWbDdovsSVmqdd7EoFmdYQ"
 
-    [markup.goldmark]
+        instagram = "https://www.instagram.com/elkngutierrez"
 
-        [markup.goldmark.renderer]
+        facebook = "https://www.facebook.com/elkin.gutierrez.370/"
 
-            unsafe = true
+        tiktok = "https://www.tiktok.com/@elkingutierrez08"
 
-[params.public]
+        x = "https://x.com/elkinhgutierrez"
 
-    youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
-
-    instagram = "https://www.instagram.com/elkngutierrez"
-
-    facebook = "https://www.facebook.com/elkin.gutierrez.370/"
-
-    tiktok = "https://www.tiktok.com/@elkingutierrez08"
-
-    x = "https://x.com/elkinhgutierrez"
-
-    bluesky = "https://bsky.app/profile/elkinhgutierrez.bsky.social"
-
-
-
-    spotify = "https://open.spotify.com/show/7vBEa4oHRXdcJ32w6Yy3NK?si=cWbDdovsSVmqdd7EoFmdYQ"
+        bluesky = "https://bsky.app/profile/elkinhgutierrez.bsky.social"

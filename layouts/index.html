@@ -954,6 +954,152 @@
 
         }
 
+
+/* =========================================
+   THEME SWITCH
+   ========================================= */
+
+html[data-theme="light"] {
+
+    --background: #F4F1EA;
+    --foreground: #171614;
+    --muted: #68645D;
+    --line: #D8D3C8;
+    --accent: #7A2638;
+
+}
+
+
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
+
+.theme-toggle {
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--foreground);
+
+    cursor: pointer;
+
+    flex: 0 0 auto;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    background: var(--line);
+    border-color: var(--muted);
+
+    transform: rotate(8deg);
+
+}
+
+
+.theme-toggle:focus-visible {
+
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+
+}
+
+
+.theme-toggle-icon {
+
+    position: relative;
+
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+/* LUNA */
+
+.theme-toggle-icon::before {
+
+    content: "☾";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    line-height: 1;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+/* SOL */
+
+html[data-theme="light"] .theme-toggle-icon::before {
+
+    content: "☀";
+
+}
+
+
+/* =========================================
+   THEME TRANSITION
+   ========================================= */
+
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] .site-header,
+html[data-theme="light"] footer {
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+/* =========================================
+   INITIAL THEME
+   ========================================= */
+
+html {
+
+    background: var(--background);
+
+}
+
 </style>
 
     <meta property="og:url"
@@ -1015,6 +1161,15 @@
     </a>
 
     {{ partial "search.html" . }}
+
+    <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Cambiar apariencia"
+        title="Cambiar apariencia">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+    </button>
 
     <div class="language-switcher" aria-label="Language selection">
 
@@ -1847,218 +2002,6 @@
     display: grid;
 
     grid-template-columns:
-        70px 1fr auto;
-
-    gap:
-        25px;
-
-    align-items:
-        center;
-
-    min-height:
-        150px;
-
-    padding:
-        35px;
-
-    border-right:
-        1px solid var(--line);
-
-    border-bottom:
-        1px solid var(--line);
-
-    transition:
-        background 0.25s ease,
-        padding-left 0.25s ease;
-
-}
-
-
-.academic-link:hover {
-
-    background:
-        var(--accent);
-
-    padding-left:
-        45px;
-
-}
-
-
-.academic-number {
-
-    color:
-        var(--muted);
-
-    font-size:
-        10px;
-
-    letter-spacing:
-        2px;
-
-}
-
-
-.academic-name {
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    color:
-        var(--foreground);
-
-    font-size:
-        30px;
-
-    line-height:
-        1;
-
-}
-
-
-.academic-arrow {
-
-    color:
-        var(--muted);
-
-    font-size:
-        20px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-
-}
-
-
-.academic-link:hover
-.academic-arrow {
-
-    color:
-        var(--foreground);
-
-    transform:
-        translate(4px, -4px);
-
-}
-
-
-@media (max-width: 700px) {
-
-    .academic-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .academic-link {
-
-        grid-template-columns:
-            50px 1fr auto;
-
-        gap:
-            15px;
-
-        min-height:
-            120px;
-
-        padding:
-            28px 20px;
-
-    }
-
-
-    .academic-link:hover {
-
-        padding-left:
-            30px;
-
-    }
-
-
-    .academic-name {
-
-        font-size:
-            26px;
-
-    }
-
-}
-
-
-.academic-logo {
-
-    display: block;
-
-    width: 42px;
-
-    height: 42px;
-
-    object-fit: contain;
-
-    flex-shrink: 0;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-
-}
-
-
-.academic-link:hover .academic-logo {
-
-    transform:
-        scale(1.08);
-
-    opacity:
-        0.95;
-
-}
-
-
-@media (max-width: 700px) {
-
-    .academic-logo {
-
-        width:
-            40px;
-
-        height:
-            40px;
-
-    }
-
-}
-
-/* =========================================
-   PRESENCIA ACADÉMICA
-   ========================================= */
-
-.academic-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    border-top:
-        1px solid var(--line);
-
-    border-left:
-        1px solid var(--line);
-
-}
-
-
-.academic-link {
-
-    display: grid;
-
-    grid-template-columns:
         60px 1fr 35px;
 
     gap:
@@ -2346,6 +2289,152 @@
 
         }
 
+
+/* =========================================
+   THEME SWITCH
+   ========================================= */
+
+html[data-theme="light"] {
+
+    --background: #F4F1EA;
+    --foreground: #171614;
+    --muted: #68645D;
+    --line: #D8D3C8;
+    --accent: #7A2638;
+
+}
+
+
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
+
+.theme-toggle {
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+
+    background: transparent;
+    color: var(--foreground);
+
+    cursor: pointer;
+
+    flex: 0 0 auto;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    background: var(--line);
+    border-color: var(--muted);
+
+    transform: rotate(8deg);
+
+}
+
+
+.theme-toggle:focus-visible {
+
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+
+}
+
+
+.theme-toggle-icon {
+
+    position: relative;
+
+    display: block;
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+/* LUNA */
+
+.theme-toggle-icon::before {
+
+    content: "☾";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    line-height: 1;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+
+/* SOL */
+
+html[data-theme="light"] .theme-toggle-icon::before {
+
+    content: "☀";
+
+}
+
+
+/* =========================================
+   THEME TRANSITION
+   ========================================= */
+
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] .site-header,
+html[data-theme="light"] footer {
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+/* =========================================
+   INITIAL THEME
+   ========================================= */
+
+html {
+
+    background: var(--background);
+
+}
+
 </style>
 
 <section class="section">
@@ -2391,15 +2480,50 @@
 
     <script src="{{ "pagefind/pagefind-ui.js" | relURL }}"></script>
 
+    <script>
+        (function () {
+
+            const root = document.documentElement;
+            const toggle = document.getElementById("theme-toggle");
+
+            if (!toggle) {
+                return;
+            }
+
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "light" || savedTheme === "dark") {
+
+                root.setAttribute("data-theme", savedTheme);
+
+            } else {
+
+                root.setAttribute("data-theme", "dark");
+
+            }
+
+
+            toggle.addEventListener("click", function () {
+
+                const currentTheme =
+                    root.getAttribute("data-theme") || "dark";
+
+
+                const nextTheme =
+                    currentTheme === "dark"
+                        ? "light"
+                        : "dark";
+
+
+                root.setAttribute("data-theme", nextTheme);
+
+                localStorage.setItem("theme", nextTheme);
+
+            });
+
+        })();
+    </script>
+
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
