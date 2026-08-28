@@ -1240,21 +1240,16 @@ html {
 <section class="section intellectual-map">
 
     <div class="section-label">
-        MAPA INTELECTUAL
+        Mapa intelectual
     </div>
-
 
     <div class="intellectual-map-header">
 
-        <div class="intellectual-map-kicker">
-            CARTOGRAFÍA CONCEPTUAL
-        </div>
-
         <p class="intellectual-map-intro">
-            Una cartografía de los problemas, conceptos y campos
-            que articulan mi trabajo filosófico. Las relaciones no
-            representan una clasificación cerrada, sino un campo
-            de problemas en transformación.
+            Una cartograf�a de los problemas, conceptos y campos
+            que articulan mi trabajo filos�fico. No se trata de una
+            clasificaci�n cerrada, sino de una red de relaciones
+            en transformaci�n.
         </p>
 
     </div>
@@ -1262,297 +1257,177 @@ html {
 
     <div class="intellectual-map-canvas">
 
-
-        <!-- ================================================
-             RELACIONES
-             ================================================= -->
-
         <svg
             class="intellectual-map-lines"
-            viewBox="0 0 1000 650"
+            viewBox="0 0 1000 560"
             preserveAspectRatio="none"
-            aria-hidden="true">
-
-
-            <!-- TÉCNICA → INDIVIDUACIÓN -->
+            aria-hidden="true"
+        >
 
             <line
                 class="intellectual-map-line"
-                data-source="technology"
-                data-target="individuation"
                 x1="500"
-                y1="100"
+                y1="105"
                 x2="500"
-                y2="270" />
-
-
-            <!-- ÉTICA → INDIVIDUACIÓN -->
+                y2="235"
+            />
 
             <line
                 class="intellectual-map-line"
-                data-source="ethics"
-                data-target="individuation"
-                x1="205"
-                y1="190"
-                x2="420"
-                y2="295" />
-
-
-            <!-- ESTÉTICA → INDIVIDUACIÓN -->
-
-            <line
-                class="intellectual-map-line"
-                data-source="aesthetics"
-                data-target="individuation"
-                x1="795"
-                y1="190"
-                x2="580"
-                y2="295" />
-
-
-            <!-- INDIVIDUACIÓN → CAMPOS PROBLEMÁTICOS -->
-
-            <line
-                class="intellectual-map-line intellectual-map-line-primary"
-                data-source="individuation"
-                data-target="problematic"
-                x1="500"
-                y1="365"
-                x2="500"
-                y2="465" />
-
-
-            <!-- FENOMENOLOGÍA → CAMPOS -->
-
-            <line
-                class="intellectual-map-line"
-                data-source="phenomenology"
-                data-target="problematic"
-                x1="210"
-                y1="555"
-                x2="430"
-                y2="510" />
-
-
-            <!-- TEORÍA JURÍDICA → CAMPOS -->
-
-            <line
-                class="intellectual-map-line"
-                data-source="legal"
-                data-target="problematic"
-                x1="790"
-                y1="555"
-                x2="570"
-                y2="510" />
-
-
-            <!-- RELACIONES LATERALES -->
-
-            <line
-                class="intellectual-map-line intellectual-map-line-secondary"
-                data-source="ethics"
-                data-target="aesthetics"
-                x1="310"
+                x1="280"
                 y1="175"
-                x2="690"
-                y2="175" />
-
+                x2="405"
+                y2="270"
+            />
 
             <line
-                class="intellectual-map-line intellectual-map-line-secondary"
-                data-source="phenomenology"
-                data-target="legal"
-                x1="310"
-                y1="570"
-                x2="690"
-                y2="570" />
+                class="intellectual-map-line"
+                x1="720"
+                y1="175"
+                x2="595"
+                y2="270"
+            />
+
+            <line
+                class="intellectual-map-line"
+                x1="350"
+                y1="500"
+                x2="445"
+                y2="345"
+            />
+
+            <line
+                class="intellectual-map-line"
+                x1="650"
+                y1="500"
+                x2="555"
+                y2="345"
+            />
 
         </svg>
 
 
-        <!-- ================================================
-             NODO — TÉCNICA
-             ================================================= -->
-
         <a
             href="{{ "/investigacion/tecnica/" | relLangURL }}"
             class="intellectual-node technology"
-            data-node="technology">
+        >
 
             <span class="intellectual-node-number">
                 01
             </span>
 
             <h3 class="intellectual-node-title">
-                Técnica
+                T�cnica
             </h3>
 
             <p class="intellectual-node-description">
-                Tecnicidad · objetos técnicos · mundo asociado
+                Tecnicidad � objetos t�cnicos � mundo asociado
             </p>
 
         </a>
 
 
-        <!-- ================================================
-             NODO — ÉTICA
-             ================================================= -->
-
         <a
             href="{{ "/investigacion/etica/" | relLangURL }}"
             class="intellectual-node ethics"
-            data-node="ethics">
+        >
 
             <span class="intellectual-node-number">
                 02
             </span>
 
             <h3 class="intellectual-node-title">
-                Ética
+                �tica
             </h3>
 
             <p class="intellectual-node-description">
-                Relación · transindividualidad · potencia
+                Relaci�n � transindividualidad � potencia
             </p>
 
         </a>
 
-
-        <!-- ================================================
-             NODO — INDIVIDUACIÓN
-             ================================================= -->
 
         <a
             href="{{ "/investigacion/individuacion/" | relLangURL }}"
             class="intellectual-node individuation"
-            data-node="individuation">
+        >
 
             <span class="intellectual-node-number">
-                03 · NÚCLEO
+                03 � N�CLEO
             </span>
 
             <h3 class="intellectual-node-title">
-                Individuación
+                Individuaci�n
             </h3>
 
             <p class="intellectual-node-description">
-                Metastabilidad · transducción · preindividual
+                Metastabilidad � transducci�n � preindividual
             </p>
 
         </a>
 
 
-        <!-- ================================================
-             NODO — ESTÉTICA
-             ================================================= -->
-
         <a
             href="{{ "/investigacion/estetica/" | relLangURL }}"
             class="intellectual-node aesthetics"
-            data-node="aesthetics">
+        >
 
             <span class="intellectual-node-number">
                 04
             </span>
 
             <h3 class="intellectual-node-title">
-                Estética
+                Est�tica
             </h3>
 
             <p class="intellectual-node-description">
-                Afectación · sensibilidad · campos relacionales
+                Afectaci�n � sensibilidad � campos relacionales
             </p>
 
         </a>
 
 
-        <!-- ================================================
-             NODO — FENOMENOLOGÍA
-             ================================================= -->
-
         <a
             href="{{ "/investigacion/fenomenologia/" | relLangURL }}"
             class="intellectual-node phenomenology"
-            data-node="phenomenology">
+        >
 
             <span class="intellectual-node-number">
                 05
             </span>
 
             <h3 class="intellectual-node-title">
-                Fenomenología
+                Fenomenolog�a
             </h3>
 
             <p class="intellectual-node-description">
-                Existencia · espacio · experiencia
+                Existencia � espacio � experiencia
             </p>
 
         </a>
 
 
-        <!-- ================================================
-             NODO — TEORÍA JURÍDICA
-             ================================================= -->
-
         <a
             href="{{ "/investigacion/teoria-juridica/" | relLangURL }}"
             class="intellectual-node legal"
-            data-node="legal">
+        >
 
             <span class="intellectual-node-number">
                 06
             </span>
 
             <h3 class="intellectual-node-title">
-                Teoría jurídica
+                Teor�a jur�dica
             </h3>
 
             <p class="intellectual-node-description">
-                Institución · normatividad · identidad
-            </p>
-
-        </a>
-
-
-        <!-- ================================================
-             NODO — CAMPOS PROBLEMÁTICOS
-             ================================================= -->
-
-        <a
-            href="/investigacion/"
-            class="intellectual-node problematic"
-            data-node="problematic">
-
-            <span class="intellectual-node-number">
-                07 · CAMPO
-            </span>
-
-            <h3 class="intellectual-node-title">
-                Campos problemáticos
-            </h3>
-
-            <p class="intellectual-node-description">
-                Incompatibilidad · potenciales · transformación
+                Instituci�n � normatividad � identidad
             </p>
 
         </a>
 
 
     </div>
-
-
-    <div class="intellectual-map-caption">
-
-        <span>
-            El mapa no representa objetos aislados.
-        </span>
-
-        <span>
-            Representa relaciones entre problemas.
-        </span>
-
-    </div>
-
 
 </section>
 
@@ -3093,586 +2968,6 @@ html[data-theme="light"] .editorial-seal-image {
 
 }
 
-
-/* =========================================================
-   MAPA INTELECTUAL — GRAFO
-   ========================================================= */
-
-.intellectual-map {
-    position: relative;
-    padding-top: 120px;
-    padding-bottom: 145px;
-}
-
-
-.intellectual-map-header {
-    max-width: 760px;
-    margin-bottom: 70px;
-}
-
-
-.intellectual-map-kicker {
-    margin-bottom: 18px;
-
-    color: var(--accent);
-
-    font-size: 9px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-
-.intellectual-map-intro {
-    margin: 0;
-
-    max-width: 720px;
-
-    color: var(--muted);
-
-    font-size: 18px;
-    line-height: 1.75;
-
-    letter-spacing: -0.01em;
-}
-
-
-/* =========================================================
-   CANVAS
-   ========================================================= */
-
-.intellectual-map-canvas {
-    position: relative;
-
-    width: 100%;
-    height: 650px;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   SVG
-   ========================================================= */
-
-.intellectual-map-lines {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
-.intellectual-map-line {
-    stroke: var(--line);
-
-    stroke-width: 1.2;
-
-    vector-effect: non-scaling-stroke;
-
-    opacity: 0.8;
-
-    transition:
-        opacity 0.3s ease,
-        stroke 0.3s ease,
-        stroke-width 0.3s ease;
-}
-
-
-.intellectual-map-line-primary {
-    stroke: var(--accent);
-
-    stroke-width: 1.5;
-
-    opacity: 0.75;
-}
-
-
-.intellectual-map-line-secondary {
-    stroke-dasharray: 3 7;
-
-    opacity: 0.4;
-}
-
-
-/* =========================================================
-   NODOS
-   ========================================================= */
-
-.intellectual-node {
-    position: absolute;
-
-    z-index: 3;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    width: 220px;
-
-    min-height: 118px;
-
-    padding: 20px 22px;
-
-    border:
-        1px solid var(--line);
-
-    background:
-        var(--background);
-
-    text-decoration: none;
-
-    transition:
-        border-color 0.3s ease,
-        background-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-.intellectual-node:hover {
-    z-index: 20;
-
-    border-color:
-        var(--accent);
-
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.22);
-}
-
-
-/* =========================================================
-   POSICIONAMIENTO
-   ========================================================= */
-
-.intellectual-node.technology {
-    top: 35px;
-    left: 50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-.intellectual-node.technology:hover {
-    transform:
-        translateX(-50%)
-        translateY(-6px);
-}
-
-
-.intellectual-node.ethics {
-    top: 120px;
-    left: 5%;
-}
-
-
-.intellectual-node.individuation {
-    top: 245px;
-    left: 50%;
-
-    width: 270px;
-    min-height: 125px;
-
-    transform:
-        translateX(-50%);
-
-    border-color:
-        var(--accent);
-}
-
-
-.intellectual-node.individuation:hover {
-    transform:
-        translateX(-50%)
-        translateY(-6px);
-}
-
-
-.intellectual-node.aesthetics {
-    top: 120px;
-    right: 5%;
-}
-
-
-.intellectual-node.phenomenology {
-    bottom: 25px;
-    left: 9%;
-}
-
-
-.intellectual-node.legal {
-    bottom: 25px;
-    right: 9%;
-}
-
-
-.intellectual-node.problematic {
-    bottom: 105px;
-    left: 50%;
-
-    width: 285px;
-    min-height: 130px;
-
-    transform:
-        translateX(-50%);
-
-    border-color:
-        var(--accent);
-
-    background:
-        var(--background);
-}
-
-
-.intellectual-node.problematic:hover {
-    transform:
-        translateX(-50%)
-        translateY(-6px);
-}
-
-
-/* =========================================================
-   NÚMERO
-   ========================================================= */
-
-.intellectual-node-number {
-    display: block;
-
-    margin-bottom: 12px;
-
-    color:
-        var(--accent);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   TÍTULO
-   ========================================================= */
-
-.intellectual-node-title {
-    margin: 0 0 10px;
-
-    color:
-        var(--foreground);
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size: 29px;
-
-    line-height: 1;
-
-    font-weight: 500;
-
-    letter-spacing:
-        -0.025em;
-}
-
-
-.intellectual-node.individuation .intellectual-node-title {
-
-    font-size: 34px;
-}
-
-
-.intellectual-node.problematic .intellectual-node-title {
-
-    font-size: 30px;
-}
-
-
-/* =========================================================
-   DESCRIPCIÓN
-   ========================================================= */
-
-.intellectual-node-description {
-    margin: 0;
-
-    color:
-        var(--muted);
-
-    font-size: 10px;
-
-    line-height: 1.55;
-
-    letter-spacing:
-        0.015em;
-}
-
-
-/* =========================================================
-   CAPTION
-   ========================================================= */
-
-.intellectual-map-caption {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 30px;
-
-    margin-top: 35px;
-
-    padding-top: 18px;
-
-    border-top:
-        1px solid var(--line);
-
-    color:
-        var(--muted);
-
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   HOVER DEL GRAFO
-   ========================================================= */
-
-.intellectual-map-canvas:has(.intellectual-node:hover)
-.intellectual-map-line {
-
-    opacity: 0.18;
-}
-
-
-.intellectual-map-canvas:has(.technology:hover)
-.intellectual-map-line[data-source="technology"],
-.intellectual-map-canvas:has(.technology:hover)
-.intellectual-map-line[data-target="technology"] {
-
-    opacity: 1;
-
-    stroke:
-        var(--accent);
-
-    stroke-width: 2;
-}
-
-
-.intellectual-map-canvas:has(.ethics:hover)
-.intellectual-map-line[data-source="ethics"],
-.intellectual-map-canvas:has(.ethics:hover)
-.intellectual-map-line[data-target="ethics"] {
-
-    opacity: 1;
-
-    stroke:
-        var(--accent);
-
-    stroke-width: 2;
-}
-
-
-.intellectual-map-canvas:has(.aesthetics:hover)
-.intellectual-map-line[data-source="aesthetics"],
-.intellectual-map-canvas:has(.aesthetics:hover)
-.intellectual-map-line[data-target="aesthetics"] {
-
-    opacity: 1;
-
-    stroke:
-        var(--accent);
-
-    stroke-width: 2;
-}
-
-
-.intellectual-map-canvas:has(.individuation:hover)
-.intellectual-map-line[data-source="individuation"],
-.intellectual-map-canvas:has(.individuation:hover)
-.intellectual-map-line[data-target="individuation"] {
-
-    opacity: 1;
-
-    stroke:
-        var(--accent);
-
-    stroke-width: 2;
-}
-
-
-.intellectual-map-canvas:has(.problematic:hover)
-.intellectual-map-line[data-source="problematic"],
-.intellectual-map-canvas:has(.problematic:hover)
-.intellectual-map-line[data-target="problematic"] {
-
-    opacity: 1;
-
-    stroke:
-        var(--accent);
-
-    stroke-width: 2;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .intellectual-map-canvas {
-
-        height: auto;
-
-        display: grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap: 14px;
-
-        overflow: visible;
-    }
-
-
-    .intellectual-map-lines {
-        display: none;
-    }
-
-
-    .intellectual-node,
-    .intellectual-node.technology,
-    .intellectual-node.ethics,
-    .intellectual-node.individuation,
-    .intellectual-node.aesthetics,
-    .intellectual-node.phenomenology,
-    .intellectual-node.legal,
-    .intellectual-node.problematic {
-
-        position: relative;
-
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-
-        width: auto;
-
-        min-height: 145px;
-
-        transform: none !important;
-    }
-
-
-    .intellectual-node.individuation,
-    .intellectual-node.problematic {
-
-        grid-column:
-            1 / -1;
-    }
-
-
-    .intellectual-node.individuation {
-        order: -2;
-    }
-
-
-    .intellectual-node.problematic {
-        order: -1;
-    }
-
-
-    .intellectual-map-caption {
-
-        flex-direction:
-            column;
-
-        gap: 8px;
-    }
-
-}
-
-
-@media (max-width: 560px) {
-
-    .intellectual-map {
-
-        padding-top: 80px;
-
-        padding-bottom: 90px;
-    }
-
-
-    .intellectual-map-header {
-
-        margin-bottom: 45px;
-    }
-
-
-    .intellectual-map-intro {
-
-        font-size: 16px;
-
-        line-height: 1.7;
-    }
-
-
-    .intellectual-map-canvas {
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .intellectual-node,
-    .intellectual-node.technology,
-    .intellectual-node.ethics,
-    .intellectual-node.individuation,
-    .intellectual-node.aesthetics,
-    .intellectual-node.phenomenology,
-    .intellectual-node.legal,
-    .intellectual-node.problematic {
-
-        grid-column: auto;
-
-        min-height: 130px;
-    }
-
-
-    .intellectual-node.individuation,
-    .intellectual-node.problematic {
-
-        grid-column:
-            1 / -1;
-    }
-
-
-    .intellectual-node-title {
-
-        font-size: 27px;
-    }
-
-}
 </style>
 
 
@@ -3739,9 +3034,5 @@ html[data-theme="light"] .editorial-seal-image {
 </body>
 
 </html>
-
-
-
-
 
 

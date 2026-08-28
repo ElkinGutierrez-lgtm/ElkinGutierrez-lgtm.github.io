@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon"
+          href="{{ "favicon.svg" | relURL }}"
+          type="image/svg+xml">
+
+    <title>
+        {{ if .Title }}
+            {{ .Title }} — {{ .Site.Params.author }}
+        {{ else }}
+            {{ .Site.Title }}
+        {{ end }}
+    </title>
+
+
+    <meta property="og:title"
+          content="{{ .Title }}">
+
+    <meta property="og:description"
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <meta property="og:url"
+          content="{{ .Permalink }}">
+
+    <meta property="og:type"
+          content="article">
+
+    <meta property="og:site_name"
+          content="{{ .Site.Title }}">
+
+    <meta property="og:image"
+          content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/elkin.jpeg" | absURL }}{{ end }}">
+
+    <meta name="twitter:card"
+          content="summary">
+
+    <meta name="twitter:title"
+          content="{{ .Title }}">
+
+    <meta name="twitter:description"
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <meta name="twitter:url"
+          content="{{ .Permalink }}">
+
+    <meta name="twitter:image"
+          content="{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ "images/elkin.jpeg" | absURL }}{{ end }}">
+
+    <meta name="author"
+          content="{{ .Site.Params.author }}">
+
+    <meta name="description"
+          content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+    <style>
+
+        :root {
+            --background: #0A0A09;
+            --foreground: #E8E4DC;
+            --muted: #8B8881;
+            --line: #292825;
+            --accent: #7A2638;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--foreground);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           HEADER
+           ========================================= */
+
+        .site-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 28px 5vw;
+
+            border-bottom:
+                1px solid var(--line);
+
+        }
+
+
+        .brand {
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .brand span {
+
+            color: var(--accent);
+
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+        }
+
+
+        nav a {
+
+            position: relative;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        nav a:hover {
+
+            color: var(--accent);
+
+        }
+
+
+        nav a.active {
+
+            color: var(--foreground);
+
+        }
+
+
+        nav a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: -9px;
+
+            height: 1px;
+
+            background: var(--accent);
+
+        }
+
+
+        /* =========================================
+           LANGUAGE SWITCHER
+           ========================================= */
+
+        .language-switcher {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-left: 8px;
+
+            padding-left: 18px;
+
+            border-left:
+                1px solid var(--line);
+
+        }
+
+
+        .language-switcher a {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: var(--muted);
+
+            transition:
+                color 0.2s ease;
+
+        }
+        .language-switcher a:hover {
+
+            color: var(--foreground);
+
+        }
+
+
+        .language-switcher a.current {
+
+            color: var(--accent);
+
+        }
+
+
+        .language-separator {
+
+            color: var(--line);
+
+            font-size: 10px;
+
+        }
+
+
+        /* =========================================
+           PAGE
+           ========================================= */
+
+        .page {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 110px 5vw 140px;
+
+        }
+
+
+        .page-eyebrow {
+
+            margin-bottom: 35px;
+
+            color: var(--accent);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .page-title {
+
+            max-width: 1000px;
+
+            margin: 0 0 60px;
+
+            font-size:
+                clamp(70px, 10vw, 140px);
+
+            line-height: 0.84;
+
+            letter-spacing: -0.06em;
+
+            font-weight: 700;
+
+        }
+
+
+        .page-content {
+
+            max-width: 760px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            line-height: 1.85;
+
+        }
+
+
+        .page-content p {
+
+            margin:
+                0 0 28px;
+
+        }
+
+
+        .page-content strong {
+
+            color: var(--foreground);
+
+            font-weight: 400;
+
+        }
+
+
+        .page-content h2 {
+
+            margin-top: 70px;
+
+            margin-bottom: 25px;
+
+            color: var(--foreground);
+
+            font-size: 36px;
+
+            line-height: 1.1;
+
+        }
+
+
+        .page-content ul {
+
+            padding-left: 25px;
+
+        }
+
+
+        .page-content li {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            padding: 30px 5vw;
+
+            border-top:
+                1px solid var(--line);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .site-header {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 20px;
+
+            }
+
+
+            nav {
+
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .language-switcher {
+
+                margin-left: 0;
+
+                padding-left: 0;
+
+                border-left: none;
+
+                padding-top: 4px;
+
+            }
+
+
+            nav a.active::after {
+
+                bottom: -6px;
+
+            }
+
+
+            .page {
+
+                padding-top: 80px;
+
+            }
+
+
+            .page-title {
+
+                font-size: 70px;
+
+            }
+
+
+            footer {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+        }
+
+    
+/* =========================================================
+   PROGRAMA DE INVESTIGACIÓN — NUEVE ÁREAS
+   ========================================================= */
+
+.research-page .research-introduction h3 {
+    display: inline-block !important;
+    margin-top: 65px !important;
+    margin-bottom: 22px !important;
+    padding-bottom: 7px !important;
+    border-bottom: 2px solid var(--accent) !important;
+    color: var(--foreground) !important;
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.4px !important;
+}
+
+@media (max-width: 700px) {
+    .research-page .research-introduction h3 {
+        margin-top: 50px !important;
+        margin-bottom: 20px !important;
+        font-size: 28px !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+
+    <a href="/"
+       class="brand">
+
+        ELKIN <span>GUTIÉRREZ</span>
+
+    </a>
+
+
+    <nav>
+
+
+        <a href="{{ "/investigacion/" | relLangURL }}"
+           class="{{ if eq .Section "investigacion" }}active{{ end }}">
+
+            {{ i18n "research" }}
+
+        </a>
+
+
+        <a href="{{ "/publicaciones/" | relLangURL }}"
+           class="{{ if eq .Section "publicaciones" }}active{{ end }}">
+
+            {{ i18n "publications" }}
+
+        </a>
+
+
+        <a href="{{ "/sobre-mi/" | relLangURL }}"
+           class="{{ if eq .Section "sobre-mi" }}active{{ end }}">
+
+            {{ i18n "about" }}
+
+        </a>
+
+
+        <a href="{{ "/cv/" | relLangURL }}"
+           class="{{ if eq .Section "cv" }}active{{ end }}">
+
+            {{ i18n "cv" }}
+
+        </a>
+
+
+        <a href="{{ "/contacto/" | relLangURL }}"
+           class="{{ if eq .Section "contacto" }}active{{ end }}">
+
+            {{ i18n "contact" }}
+
+        </a>
+
+
+<div class="language-switcher" aria-label="Language selection">
+
+{{ range .AllTranslations }}
+
+    <a href="{{ .RelPermalink }}"
+       lang="{{ .Language.Lang }}"
+       class="{{ if eq $.Language.Lang .Language.Lang }}current{{ end }}">
+       {{ upper .Language.Lang }}
+    </a>
+
+    {{ if ne .Language.Lang "fr" }}
+    <span class="language-separator">/</span>
+    {{ end }}
+
+{{ end }}
+
+</div>
+
+
+    </nav>
+
+
+</header>
+
+
+<main>
+
+    {{ block "main" . }}
+
+    {{ end }}
+
+</main>
+
+
+<footer>
+
+    <span>
+
+        © 2026 {{ .Site.Params.author }}
+
+    </span>
+
+
+    <span>
+
+        {{ i18n "philosophy_research" }}
+
+    </span>
+
+</footer>
+
+
+</body>
+
+</html>
+

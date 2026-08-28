@@ -1,0 +1,89 @@
+[research]
+other = "Research"
+
+[publications]
+other = "Publications"
+
+[about]
+other = "About"
+
+[cv]
+other = "CV"
+
+[contact]
+other = "Contact"
+
+[academic_presence]
+other = "Academic presence"
+
+[philosopher_researcher]
+other = "Philosopher · Researcher"
+
+[philosophy_research]
+other = "Philosophy · Research"
+
+[hero_title]
+other = "Thinking relation."
+
+[hero_text]
+other = "Philosophical research on individuation, technology, existence and institution."
+
+[hero_text_2]
+other = "The problem is not merely what an individual is, but how it comes to exist."
+
+[research_section]
+other = "01 — Research"
+
+[individuation]
+other = "Individuation"
+
+[individuation_description]
+other = "Ontogenesis, transduction, the preindividual and processes through which the individual is constituted."
+
+[technology]
+other = "Technology"
+
+[technology_description]
+other = "Philosophy of technology, technical objects, technicity and relations between culture and technology."
+
+[phenomenology]
+other = "Phenomenology"
+
+[phenomenology_description]
+other = "Space, existence, experience and asubjective forms of phenomenological description."
+
+[legal_theory]
+other = "Legal theory"
+
+[legal_theory_description]
+other = "Identity, institution, normativity and philosophical problems of law."
+
+[publications_section]
+other = "02 — Publications"
+
+[articles]
+other = "Articles and essays"
+
+[books]
+other = "Books and chapters"
+
+[translations]
+other = "Translations"
+
+[current_research]
+other = "Current research"
+
+[about_section]
+other = "About me."
+
+[about_text]
+other = "I am a philosopher and researcher. My work examines the processes through which individuals, objects, institutions and worlds come to constitute themselves."
+
+[about_text_2]
+other = "My research spans continental philosophy, philosophy of technology, phenomenology and legal theory."
+
+[think_also]
+other = "Thinking also"
+
+[contact_link]
+other = "Contact →"

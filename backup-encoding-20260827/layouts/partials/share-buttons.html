@@ -1,0 +1,272 @@
+﻿<div class="share-page" aria-label="Compartir esta página">
+
+    <span class="share-label">
+        Compartir
+    </span>
+
+    <div class="share-actions">
+
+        <a
+            class="share-button share-x"
+            href="https://twitter.com/intent/tweet?text={{ .Title | urlquery }}&url={{ .Permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en X"
+            title="Compartir en X">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.956 6.817H1.69l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+            </svg>
+
+        </a>
+
+
+        <a
+            class="share-button share-facebook"
+            href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir en Facebook"
+            title="Compartir en Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.5 21v-8h2.75l.5-3h-3.25V8.05c0-.87.24-1.55 1.6-1.55h1.9V3.82c-.33-.04-1.47-.14-2.79-.14-2.76 0-4.65 1.68-4.65 4.77V10H6.5v3h3.06v8h3.94Z"/>
+            </svg>
+
+        </a>
+
+
+        <a
+            class="share-button share-gmail"
+            href="https://mail.google.com/mail/?view=cm&fs=1&su={{ .Title | urlquery }}&body={{ .Permalink | urlquery }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compartir por Gmail"
+            title="Compartir por Gmail">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2 0v.53l6.99 5.1 7.01-5.1V5.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5Zm14 2.99-7.01 5.1L5 8.5v10c0 .28.22.5.5.5h13a.5.5 0 0 0 .5-.5v-10Z"/>
+            </svg>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="share-button share-copy"
+            aria-label="Copiar enlace"
+            title="Copiar enlace"
+            data-share-url="{{ .Permalink }}">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 7.5A3.5 3.5 0 0 1 11.5 4H18a3.5 3.5 0 0 1 3.5 3.5v6A3.5 3.5 0 0 1 18 17h-2.5v-2H18a1.5 1.5 0 0 0 1.5-1.5v-6A1.5 1.5 0 0 0 18 6h-6.5A1.5 1.5 0 0 0 10 7.5V10H8V7.5Zm-2 2A3.5 3.5 0 0 0 2.5 13v6A3.5 3.5 0 0 0 6 22.5h6.5A3.5 3.5 0 0 0 16 19v-2.5h-2V19a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 19v-6A1.5 1.5 0 0 1 6 11.5H8v-2H6Z"/>
+            </svg>
+
+        </button>
+
+    </div>
+
+    <span class="share-copied" aria-live="polite">
+        Enlace copiado
+    </span>
+
+</div>
+
+
+<style>
+
+.share-page {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin:
+        55px 0 70px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.share-label {
+
+    color: var(--muted);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.share-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.share-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    padding: 0;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        transparent;
+
+    color:
+        var(--muted);
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.share-button svg {
+
+    width: 16px;
+
+    height: 16px;
+
+    fill: currentColor;
+
+}
+
+
+.share-button:hover {
+
+    color:
+        var(--foreground);
+
+    background:
+        var(--accent);
+
+    border-color:
+        var(--accent);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.share-copied {
+
+    display: none;
+
+    color:
+        var(--accent);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.share-copied.visible {
+
+    display: inline-block;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .share-page {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 16px;
+
+        margin-top: 45px;
+
+        margin-bottom: 55px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".share-copy").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const url = button.dataset.shareUrl;
+
+            navigator.clipboard.writeText(url).then(function () {
+
+                const container = button.closest(".share-page");
+                const message = container.querySelector(".share-copied");
+
+                message.classList.add("visible");
+
+                setTimeout(function () {
+
+                    message.classList.remove("visible");
+
+                }, 1800);
+
+            });
+
+        });
+
+    });
+
+});
+
+</script>

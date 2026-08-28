@@ -1,0 +1,599 @@
+﻿{{ define "main" }}
+
+<section class="publication-page">
+
+    <div class="publication-eyebrow">
+        {{ with .Params.type }}
+            {{ . }}
+        {{ else }}
+            Publicación
+        {{ end }}
+    </div>
+
+
+    <h1 class="publication-heading">
+        {{ .Title }}
+    </h1>
+
+
+    {{ with .Params.description }}
+
+    <p class="publication-lead">
+        {{ . }}
+    </p>
+
+    {{ end }}
+
+
+    <div class="publication-meta">
+
+        {{ with .Params.author }}
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                Autor
+            </span>
+
+            <span class="meta-value">
+                {{ . }}
+            </span>
+
+        </div>
+
+        {{ end }}
+
+
+        {{ with .Date }}
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                Año
+            </span>
+
+            <span class="meta-value">
+                {{ .Format "2006" }}
+            </span>
+
+        </div>
+
+        {{ end }}
+
+
+        {{ with .Params.revista }}
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                Publicación
+            </span>
+
+            <span class="meta-value">
+                {{ . }}
+            </span>
+
+        </div>
+
+        {{ end }}
+
+
+        {{ with .Params.editorial }}
+
+        <div class="meta-item">
+
+            <span class="meta-label">
+                Editorial
+            </span>
+
+            <span class="meta-value">
+                {{ . }}
+            </span>
+
+        </div>
+
+        {{ end }}
+
+    </div>
+
+
+    {{ if or .Params.pdf .Params.url }}
+
+    <div class="publication-links">
+
+        {{ with .Params.pdf }}
+
+        <a href="{{ . }}"
+           target="_blank"
+           rel="noopener"
+           class="publication-button">
+
+            PDF →
+
+        </a>
+
+        {{ end }}
+
+
+        {{ with .Params.url }}
+
+        <a href="{{ . }}"
+           target="_blank"
+           rel="noopener"
+           class="publication-button">
+
+            Enlace externo →
+
+        </a>
+
+        {{ end }}
+
+    </div>
+
+    {{ end }}
+
+
+    <article class="publication-content" data-pagefind-body>
+
+        {{ .Content }}
+
+    </article>
+
+    {{ partial "share-buttons.html" . }}
+
+
+</section>
+
+
+<style>
+
+/* =====================================================
+   PUBLICATION PAGE
+   ===================================================== */
+
+.publication-page {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        110px 5vw 140px;
+
+}
+
+
+/* =====================================================
+   TYPE
+   ===================================================== */
+
+.publication-eyebrow {
+
+    margin-bottom: 32px;
+
+    color: var(--accent);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+h1.publication-heading {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0;
+
+    padding: 0;
+
+    color: var(--foreground);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 64px !important;
+
+    line-height: 1.02 !important;
+
+    letter-spacing: -0.025em !important;
+
+    font-weight: 500 !important;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.publication-lead {
+
+    max-width: 720px;
+
+    margin:
+        35px 0 70px;
+
+    color: var(--muted);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =====================================================
+   METADATA
+   ===================================================== */
+
+.publication-meta {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    max-width: 850px;
+
+    margin-bottom: 90px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.meta-item {
+
+    padding: 24px 25px;
+
+    border-right:
+        1px solid var(--line);
+
+}
+
+
+.meta-item:nth-child(2n) {
+
+    border-right: none;
+
+}
+
+
+.meta-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--muted);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.meta-value {
+
+    display: block;
+
+    color: var(--foreground);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+.publication-links {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 70px;
+
+}
+
+
+.publication-button {
+
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border:
+        1px solid var(--line);
+
+    color: var(--foreground);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+
+}
+
+
+.publication-button:hover {
+
+    background:
+        var(--accent);
+
+    border-color:
+        var(--accent);
+
+}
+
+
+/* =====================================================
+   ARTICLE CONTENT
+   ===================================================== */
+
+.publication-content {
+
+    max-width: 760px;
+
+    color: var(--foreground);
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+
+}
+
+
+.publication-content p {
+
+    margin:
+        0 0 1.6em;
+
+}
+
+
+.publication-content h2 {
+
+    margin:
+        70px 0 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 38px;
+
+    line-height: 1.1;
+
+    font-weight: 500;
+
+}
+
+
+.publication-content h3 {
+
+    margin:
+        50px 0 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 29px;
+
+    line-height: 1.2;
+
+    font-weight: 500;
+
+}
+
+
+.publication-content strong {
+
+    font-weight: 600;
+
+}
+
+
+.publication-content blockquote {
+
+    margin:
+        45px 0;
+
+    padding:
+        5px 0 5px 28px;
+
+    border-left:
+        2px solid var(--accent);
+
+    color: var(--muted);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 22px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .publication-page {
+
+        padding:
+            70px 5vw 100px;
+
+    }
+
+
+    h1.publication-heading {
+
+        font-size: 46px !important;
+
+        line-height: 1.03 !important;
+
+    }
+
+
+    .publication-lead {
+
+        margin:
+            28px 0 55px;
+
+        font-size: 16px;
+
+    }
+
+
+    .publication-meta {
+
+        grid-template-columns: 1fr;
+
+        margin-bottom: 65px;
+
+    }
+
+
+    .meta-item {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid var(--line);
+
+    }
+
+
+    .meta-item:last-child {
+
+        border-bottom: none;
+
+    }
+
+
+    .publication-links {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .publication-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .publication-content {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .publication-content h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .publication-content h3 {
+
+        font-size: 27px;
+
+    }
+
+}
+
+</style>
+
+{{ end }}
+
+
+

@@ -1,0 +1,189 @@
+﻿{{ define "main" }}
+
+<section class="research-page">
+
+    <div class="research-header">
+
+        <div class="page-eyebrow">
+            01 — Investigación
+        </div>
+
+        <h1 class="page-title">
+            {{ .Title }}
+        </h1>
+
+        <div class="research-introduction" data-pagefind-body>
+
+            {{ .Content }}
+
+        </div>
+
+        {{ partial "share-buttons.html" . }}
+
+    </div>
+
+</section>
+
+
+<style>
+
+.research-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 5vw 140px;
+}
+
+.research-header {
+    margin-bottom: 0;
+}
+
+.research-header .page-eyebrow {
+    margin-bottom: 35px;
+}
+
+.research-header .page-title {
+    max-width: 1000px;
+    margin: 0 0 55px;
+}
+
+
+/* =========================================================
+   CONTENIDO DEL PROGRAMA
+   ========================================================= */
+
+.research-introduction {
+    max-width: 760px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+    line-height: 1.85;
+
+    text-align: justify;
+}
+
+.research-introduction p {
+    margin: 0 0 26px;
+}
+
+.research-introduction strong {
+    color: var(--foreground);
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL DEL PROGRAMA
+   ========================================================= */
+
+.research-introduction h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid var(--accent) !important;
+
+    color: var(--foreground);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 48px;
+    line-height: 1.1;
+
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   NUEVE ÁREAS
+   ========================================================= */
+
+.research-introduction h3 {
+    margin-top: 65px;
+    margin-bottom: 22px;
+
+    padding-bottom: 7px;
+
+    border-bottom: 2px solid var(--accent) !important;
+
+    color: var(--foreground);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: 32px;
+    line-height: 1.15;
+
+    font-weight: 500;
+
+    letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .research-page {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .research-header .page-title {
+        margin-bottom: 40px;
+    }
+
+    .research-introduction {
+        font-size: 16px;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .research-introduction h2 {
+        font-size: 43px;
+        line-height: 1.05;
+    }
+
+    .research-introduction h3 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   LÍNEAS ROJAS — NUEVE ÁREAS DE INVESTIGACIÓN
+   ========================================================= */
+
+.research-introduction h3 {
+    display: inline-block !important;
+
+    margin-top: 48px !important;
+    margin-bottom: 18px !important;
+
+    padding-bottom: 7px !important;
+
+    border-bottom: 2px solid var(--accent) !important;
+
+    color: var(--foreground) !important;
+
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.4px !important;
+}
+
+</style>
+
+{{ end }}
+
+
+

@@ -1,0 +1,89 @@
+[research]
+other = "Recherche"
+
+[publications]
+other = "Publications"
+
+[about]
+other = "À propos"
+
+[cv]
+other = "CV"
+
+[contact]
+other = "Contact"
+
+[academic_presence]
+other = "Présence académique"
+
+[philosopher_researcher]
+other = "Philosophe · Chercheur"
+
+[philosophy_research]
+other = "Philosophie · Recherche"
+
+[hero_title]
+other = "Penser la relation."
+
+[hero_text]
+other = "Recherche philosophique sur l'individuation, la technique, l'existence et l'institution."
+
+[hero_text_2]
+other = "Le problème n'est pas seulement ce qu'est un individu, mais comment il parvient à exister."
+
+[research_section]
+other = "01 — Recherche"
+
+[individuation]
+other = "Individuation"
+
+[individuation_description]
+other = "Ontogenèse, transduction, préindividuel et processus de constitution de l'individuel."
+
+[technology]
+other = "Technique"
+
+[technology_description]
+other = "Philosophie de la technique, objets techniques, technicité et relations entre culture et technologie."
+
+[phenomenology]
+other = "Phénoménologie"
+
+[phenomenology_description]
+other = "Espace, existence, expérience et formes asubjectives de description phénoménologique."
+
+[legal_theory]
+other = "Théorie juridique"
+
+[legal_theory_description]
+other = "Identité, institution, normativité et problèmes philosophiques du droit."
+
+[publications_section]
+other = "02 — Publications"
+
+[articles]
+other = "Articles et essais"
+
+[books]
+other = "Livres et chapitres"
+
+[translations]
+other = "Traductions"
+
+[current_research]
+other = "Recherche en cours"
+
+[about_section]
+other = "À propos de moi."
+
+[about_text]
+other = "Je suis philosophe et chercheur. Mon travail porte sur les processus par lesquels les individus, les objets, les institutions et les mondes viennent à se constituer."
+
+[about_text_2]
+other = "Mes recherches traversent la philosophie continentale, la philosophie de la technique, la phénoménologie et la théorie juridique."
+
+[think_also]
+other = "Penser aussi"
+
+[contact_link]
+other = "Contact →"

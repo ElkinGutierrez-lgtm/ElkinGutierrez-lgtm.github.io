@@ -1,0 +1,143 @@
+{{ define "main" }}
+
+<section class="page contact-page">
+
+    <div class="page-eyebrow">
+        04 — Contacto
+    </div>
+
+    <h1 class="page-title">
+        Contacto
+    </h1>
+
+    <div class="contact-grid">
+
+        <div class="contact-label">
+            Correspondencia académica
+        </div>
+
+        <div class="contact-content">
+
+            {{ .Content }}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns: 260px 1fr;
+
+    gap: 70px;
+
+    margin-top: 70px;
+
+    border-top: 1px solid var(--line);
+
+    padding-top: 50px;
+
+}
+
+.contact-label {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+.contact-content {
+
+    max-width: 700px;
+
+}
+
+.contact-content h2 {
+
+    margin-top: 55px;
+
+    margin-bottom: 20px;
+
+    color: var(--foreground);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+.contact-content h2:first-child {
+
+    margin-top: 0;
+
+}
+
+.contact-content p,
+.contact-content li {
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+}
+
+.contact-content a {
+
+    color: var(--foreground);
+
+    border-bottom: 1px solid var(--line);
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+.contact-content a:hover {
+
+    color: var(--accent);
+
+    border-color: var(--accent);
+
+}
+
+.contact-content ul {
+
+    padding-left: 20px;
+
+}
+
+@media (max-width: 700px) {
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+}
+
+</style>
+
+{{ end }}

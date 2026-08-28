@@ -1,0 +1,335 @@
+{{ define "main" }}
+
+<main class="cv-page">
+
+    <header class="cv-header">
+
+        <div class="section-label">
+            CV ACADÉMICA
+        </div>
+
+        <h1>
+            {{ .Title }}
+        </h1>
+
+        <p class="cv-intro">
+            {{ .Description }}
+        </p>
+
+    </header>
+
+
+    <section class="cv-sections">
+
+        {{ $sections := slice
+            "01 — Formación académica"
+            "02 — Investigación"
+            "03 — Publicaciones"
+            "04 — Docencia"
+            "05 — Dirección y formación"
+            "06 — Congresos y conferencias"
+            "07 — Proyectos de investigación"
+            "08 — Experiencia académica"
+            "09 — Distinciones y becas"
+            "10 — Idiomas"
+            "11 — Afiliaciones académicas"
+            "12 — CV completo"
+        }}
+
+        {{ range $i, $section := $sections }}
+
+        <a class="cv-section" href="#section-{{ add $i 1 }}">
+
+            <span class="cv-number">
+                {{ printf "%02d" (add $i 1) }}
+            </span>
+
+            <span class="cv-section-name">
+                {{ replaceRE `^[0-9]+ — ` "" $section }}
+            </span>
+
+            <span class="cv-arrow">
+                ↗
+            </span>
+
+        </a>
+
+        {{ end }}
+
+    </section>
+
+
+    <section class="cv-content">
+
+        {{ .Content }}
+
+    </section>
+
+</main>
+
+
+<style>
+
+.cv-page {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding:
+        100px 40px 140px;
+
+}
+
+
+.cv-header {
+
+    padding-bottom:
+        70px;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.cv-header h1 {
+
+    margin:
+        20px 0 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(48px, 7vw, 88px);
+
+    font-weight:
+        400;
+
+    line-height:
+        .95;
+
+}
+
+
+.cv-intro {
+
+    max-width:
+        680px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        18px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.cv-sections {
+
+    margin-top:
+        60px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-left:
+        1px solid var(--line);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+}
+
+
+.cv-section {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        55px 1fr auto;
+
+    gap:
+        20px;
+
+    align-items:
+        center;
+
+    min-height:
+        105px;
+
+    padding:
+        25px 30px;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+
+    text-decoration:
+        none;
+
+    color:
+        var(--foreground);
+
+    transition:
+        background .25s ease,
+        padding-left .25s ease;
+
+}
+
+
+.cv-section:hover {
+
+    background:
+        var(--accent);
+
+    padding-left:
+        38px;
+
+}
+
+
+.cv-number {
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.cv-section-name {
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.1;
+
+}
+
+
+.cv-arrow {
+
+    font-size:
+        18px;
+
+}
+
+
+.cv-content {
+
+    margin-top:
+        100px;
+
+}
+
+
+.cv-content h1 {
+
+    display:
+        none;
+
+}
+
+
+.cv-content h2 {
+
+    margin-top:
+        80px;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid var(--line);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        34px;
+
+    font-weight:
+        400;
+
+}
+
+
+.cv-content p {
+
+    max-width:
+        750px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .cv-page {
+
+        padding:
+            70px 20px 100px;
+
+    }
+
+    .cv-sections {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .cv-section {
+
+        min-height:
+            90px;
+
+        padding:
+            22px;
+
+    }
+
+    .cv-section-name {
+
+        font-size:
+            23px;
+
+    }
+
+}
+
+</style>
+
+{{ end }}

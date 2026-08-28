@@ -1,0 +1,139 @@
+{{ define "main" }}
+
+<section class="page about-page">
+
+    <div class="page-eyebrow">
+        03 — Sobre mí
+    </div>
+
+    <h1 class="page-title">
+        Elkin<br>
+        Gutiérrez
+    </h1>
+
+    <div class="about-grid">
+
+        <div class="about-label">
+            Filósofo · Investigador
+        </div>
+
+        <div class="page-content">
+
+            {{ .Content }}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 260px 1fr;
+
+    gap: 70px;
+
+    border-top: 1px solid var(--line);
+
+    padding-top: 50px;
+
+}
+
+.about-label {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+}
+
+
+/* =========================================
+   SOBRE MÍ — ESTILO EDITORIAL
+   ========================================= */
+
+.about-page .page-content {
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    line-height: 1.85;
+
+}
+
+
+/* =========================================
+   FORMACIÓN ACADÉMICA
+   ========================================= */
+
+.about-page .page-content h3 {
+
+    display: inline-block;
+
+    margin-top: 70px;
+    margin-bottom: 35px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid var(--accent);
+
+    color: var(--foreground);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   MÓVIL
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .about-page .page-content {
+
+        text-align: left;
+
+    }
+
+}
+</style>
+
+{{ end }}

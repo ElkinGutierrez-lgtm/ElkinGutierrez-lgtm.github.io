@@ -1,0 +1,139 @@
+{{ define "main" }}
+
+<section class="page cv-page">
+
+    <div class="page-eyebrow">
+        Curriculum Vitae
+    </div>
+
+    <h1 class="page-title">
+        Elkin<br>
+        Gutiérrez
+    </h1>
+
+    <div class="cv-header">
+
+        <span>
+            Filósofo
+        </span>
+
+        <span>
+            Investigador
+        </span>
+
+    </div>
+
+    <div class="cv-content">
+
+        {{ .Content }}
+
+    </div>
+
+</section>
+
+
+<style>
+
+.cv-header {
+
+    display: flex;
+
+    gap: 30px;
+
+    margin-top: 35px;
+    margin-bottom: 90px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+.cv-header span + span::before {
+
+    content: "·";
+
+    margin-right: 30px;
+
+    color: var(--accent);
+
+}
+
+.cv-content {
+
+    max-width: 900px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+.cv-content h2 {
+
+    margin: 0;
+
+    padding: 45px 0 20px;
+
+    border-bottom: 1px solid var(--line);
+
+    color: var(--foreground);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+}
+
+.cv-content p,
+.cv-content li {
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+.cv-content ul {
+
+    padding-left: 20px;
+
+}
+
+.cv-content li {
+
+    margin-bottom: 8px;
+
+}
+
+@media (max-width: 700px) {
+
+    .cv-header {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        margin-bottom: 60px;
+
+    }
+
+    .cv-header span + span::before {
+
+        margin-right: 15px;
+
+    }
+
+}
+
+</style>
+
+{{ end }}

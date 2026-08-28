@@ -54,27 +54,18 @@ title = "Elkin Gutiérrez — Filósofo e investigador"
 
         linkedin = "https://www.linkedin.com/in/elkin-gutierrez"
 
-        scholar = ""
+    [params.public]
 
-[markup]
+        youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
 
-    [markup.goldmark]
+        spotify = "https://open.spotify.com/show/7vBEa4oHRXdcJ32w6Yy3NK?si=cWbDdovsSVmqdd7EoFmdYQ"
 
-        [markup.goldmark.renderer]
-            unsafe = true
+        instagram = "https://www.instagram.com/elkngutierrez"
 
-[params.public]
+        facebook = "https://www.facebook.com/elkin.gutierrez.370/"
 
-    youtube = "https://www.youtube.com/@elkinhernangutierrez4831"
+        tiktok = "https://www.tiktok.com/@elkingutierrez08"
 
-    spotify = "https://open.spotify.com/show/7vBEa4oHRXdcJ32w6Yy3NK?si=cWbDdovsSVmqdd7EoFmdYQ"
+        x = "https://x.com/elkinhgutierrez"
 
-    instagram = "https://www.instagram.com/elkngutierrez"
-
-    facebook = "https://www.facebook.com/elkin.gutierrez.370/"
-
-    tiktok = "https://www.tiktok.com/@elkingutierrez08"
-
-    x = "https://x.com/elkinhgutierrez"
-
-    bluesky = "https://bsky.app/profile/elkinhgutierrez.bsky.social"
+        bluesky = "https://bsky.app/profile/elkinhgutierrez.bsky.social"

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -3101,6 +3101,305 @@ html[data-theme="light"] .editorial-seal-image {
 .intellectual-map {
     position: relative;
     padding-top: 120px;
+    padding-bottom: 150px;
+}
+
+
+.intellectual-map-header {
+    max-width: 720px;
+    margin-bottom: 65px;
+}
+
+
+.intellectual-map-intro {
+    margin: 0;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   CANVAS
+   --------------------------------------------------------- */
+
+.intellectual-map-canvas {
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   SVG — RELACIONES
+   --------------------------------------------------------- */
+
+.intellectual-map-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+.intellectual-map-line {
+    stroke: var(--line);
+    stroke-width: 1.2;
+    vector-effect: non-scaling-stroke;
+    opacity: 0.9;
+}
+
+
+/* ---------------------------------------------------------
+   NODOS
+   --------------------------------------------------------- */
+
+.intellectual-node {
+    position: absolute;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 220px;
+    min-height: 120px;
+
+    padding: 20px 22px;
+
+    border: 1px solid var(--line);
+    background: var(--background);
+
+    transition:
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.intellectual-node:hover {
+    z-index: 10;
+
+    border-color: var(--accent);
+
+    background: var(--background);
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ---------------------------------------------------------
+   POSICIONES
+   --------------------------------------------------------- */
+
+.intellectual-node.technology {
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.intellectual-node.technology:hover {
+    transform: translateX(-50%) translateY(-6px);
+}
+
+
+.intellectual-node.ethics {
+    top: 115px;
+    left: 10%;
+}
+
+
+.intellectual-node.individuation {
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 260px;
+    min-height: 145px;
+
+    border-color: var(--accent);
+}
+
+
+.intellectual-node.individuation:hover {
+    transform: translateX(-50%) translateY(-6px);
+}
+
+
+.intellectual-node.aesthetics {
+    top: 115px;
+    right: 10%;
+}
+
+
+.intellectual-node.phenomenology {
+    bottom: 20px;
+    left: 16%;
+}
+
+
+.intellectual-node.legal {
+    bottom: 20px;
+    right: 16%;
+}
+
+
+/* ---------------------------------------------------------
+   TYPOGRAPHY
+   --------------------------------------------------------- */
+
+.intellectual-node-number {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--accent);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.intellectual-node-title {
+    margin: 0 0 9px;
+
+    color: var(--foreground);
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -0.025em;
+}
+
+
+.intellectual-node-description {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    line-height: 1.55;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    .intellectual-map-canvas {
+        height: auto;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 14px;
+    }
+
+
+    .intellectual-map-lines {
+        display: none;
+    }
+
+
+    .intellectual-node,
+    .intellectual-node.technology,
+    .intellectual-node.ethics,
+    .intellectual-node.individuation,
+    .intellectual-node.aesthetics,
+    .intellectual-node.phenomenology,
+    .intellectual-node.legal {
+
+        position: relative;
+
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+
+        width: auto;
+        min-height: 150px;
+
+        transform: none !important;
+    }
+
+
+    .intellectual-node.individuation {
+        grid-column: 1 / -1;
+        order: -1;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .intellectual-map {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+
+    .intellectual-map-header {
+        margin-bottom: 45px;
+    }
+
+
+    .intellectual-map-intro {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    .intellectual-map-canvas {
+        grid-template-columns: 1fr;
+    }
+
+
+    .intellectual-node,
+    .intellectual-node.technology,
+    .intellectual-node.ethics,
+    .intellectual-node.individuation,
+    .intellectual-node.aesthetics,
+    .intellectual-node.phenomenology,
+    .intellectual-node.legal {
+
+        grid-column: auto;
+
+        min-height: 130px;
+    }
+
+}
+
+/* =========================================================
+   MAPA INTELECTUAL
+   CARTOGRAFÍA CONCEPTUAL — REFINAMIENTO
+   ========================================================= */
+
+.intellectual-map {
+    position: relative;
+    padding-top: 120px;
     padding-bottom: 145px;
 }
 
@@ -3392,13 +3691,15 @@ html[data-theme="light"] .editorial-seal-image {
 }
 
 
-.intellectual-node.individuation .intellectual-node-title {
+.intellectual-node.individuation
+.intellectual-node-title {
 
     font-size: 34px;
 }
 
 
-.intellectual-node.problematic .intellectual-node-title {
+.intellectual-node.problematic
+.intellectual-node-title {
 
     font-size: 30px;
 }

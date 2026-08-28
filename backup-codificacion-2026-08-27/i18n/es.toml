@@ -1,0 +1,89 @@
+[research]
+other = "Investigación"
+
+[publications]
+other = "Publicaciones"
+
+[about]
+other = "Sobre mí"
+
+[cv]
+other = "CV"
+
+[contact]
+other = "Contacto"
+
+[academic_presence]
+other = "Presencia académica"
+
+[philosopher_researcher]
+other = "Filósofo · Investigador"
+
+[philosophy_research]
+other = "Filosofía · Investigación"
+
+[hero_title]
+other = "Pensar la relación."
+
+[hero_text]
+other = "Investigación filosófica sobre individuación, técnica, existencia e institución."
+
+[hero_text_2]
+other = "El problema no es solamente qué es un individuo, sino cómo llega a existir."
+
+[research_section]
+other = "01 — Investigación"
+
+[individuation]
+other = "Individuación"
+
+[individuation_description]
+other = "Ontogénesis, transducción, preindividualidad y procesos de constitución de lo individual."
+
+[technology]
+other = "Técnica"
+
+[technology_description]
+other = "Filosofía de la técnica, objetos técnicos, tecnicidad y relaciones entre cultura y tecnología."
+
+[phenomenology]
+other = "Fenomenología"
+
+[phenomenology_description]
+other = "Espacio, existencia, experiencia y formas asubjetivas de descripción fenomenológica."
+
+[legal_theory]
+other = "Teoría jurídica"
+
+[legal_theory_description]
+other = "Identidad, institución, normatividad y problemas filosóficos del derecho."
+
+[publications_section]
+other = "02 — Publicaciones"
+
+[articles]
+other = "Artículos y ensayos"
+
+[books]
+other = "Libros y capítulos"
+
+[translations]
+other = "Traducciones"
+
+[current_research]
+other = "Investigación en curso"
+
+[about_section]
+other = "Sobre mí."
+
+[about_text]
+other = "Soy filósofo e investigador. Mi trabajo se ocupa de los procesos mediante los cuales individuos, objetos, instituciones y mundos llegan a constituirse."
+
+[about_text_2]
+other = "Mis investigaciones atraviesan la filosofía continental, la filosofía de la técnica, la fenomenología y la teoría jurídica."
+
+[think_also]
+other = "Pensar también"
+
+[contact_link]
+other = "Contacto →"
