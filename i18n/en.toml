@@ -87,3 +87,16 @@ other = "Thinking also"
 
 [contact_link]
 other = "Contact →"
+[labprob]
+eyebrow = "LABPROB · 01"
+title_line1 = "Laboratory"
+title_line2 = "of"
+title_accent = "Problematics"
+subtitle = "Problematic fields, individuation and transformation"
+manifesto = "To investigate the genesis, structure, persistence and transformation of problematic fields that condition the emergence of new forms of existence, thought, organization and action."
+motto_1 = "Study problems."
+motto_2 = "Understand emergences."
+motto_3 = "Invent transformations."
+
+[laboratory]
+other = "Laboratory"

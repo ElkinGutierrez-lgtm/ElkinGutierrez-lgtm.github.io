@@ -1133,7 +1133,7 @@ html {
 
 <header class="site-header">
 
-    <a href="/" class="brand">
+    <a href="{{ "/" | relLangURL }}" class="brand">
         ELKIN <span>GUTIÉRREZ</span>
     </a>
 
@@ -1519,7 +1519,7 @@ html {
              ================================================= -->
 
         <a
-            href="/investigacion/"
+            href="{{ "/investigacion/" | relLangURL }}"
             class="intellectual-node problematic"
             data-node="problematic">
 
@@ -1567,7 +1567,7 @@ html {
     <div class="research-grid">
 
 
-        <a href="/investigacion/individuacion/"
+        <a href="{{ "/investigacion/individuacion/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1589,7 +1589,7 @@ html {
         </a>
 
 
-        <a href="/investigacion/tecnica/"
+        <a href="{{ "/investigacion/tecnica/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1611,7 +1611,7 @@ html {
         </a>
 
 
-        <a href="/investigacion/fenomenologia/"
+        <a href="{{ "/investigacion/fenomenologia/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1633,7 +1633,7 @@ html {
         </a>
 
 
-        <a href="/investigacion/teoria-juridica/"
+        <a href="{{ "/investigacion/teoria-juridica/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1653,7 +1653,7 @@ html {
             </p>
 
         </a>
-        <a href="/investigacion/filosofia-de-la-ciencia/"
+        <a href="{{ "/investigacion/filosofia-de-la-ciencia/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1675,7 +1675,7 @@ html {
         </a>
 
 
-        <a href="/investigacion/pedagogia/"
+        <a href="{{ "/investigacion/pedagogia/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1697,7 +1697,7 @@ html {
         </a>
 
 
-        <a href="/investigacion/critica-literaria/"
+        <a href="{{ "/investigacion/critica-literaria/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1717,7 +1717,7 @@ html {
             </p>
 
         </a>
-        <a href="/investigacion/psicologia/"
+        <a href="{{ "/investigacion/psicologia/" | relLangURL }}"
            class="research-item">
 
             <span class="research-number">
@@ -1745,6 +1745,61 @@ html {
 </section>
 
 
+<section class="section labprob-feature">
+
+    <div class="section-label">
+        LABPROB
+    </div>
+
+    <a href="{{ "/labprob/" | relLangURL }}"
+       class="labprob-card">
+
+        <div class="labprob-card-header">
+
+            <span class="labprob-number">
+                LAB / 001
+            </span>
+
+            <span class="labprob-arrow">
+                →
+            </span>
+
+        </div>
+
+        <div class="labprob-card-body">
+
+            <h2 class="labprob-title">
+                Laboratorio de Problematicidad
+            </h2>
+
+            <div class="labprob-brand">
+                LABPRO
+            </div>
+
+            <p class="labprob-description">
+                Un espacio experimental para investigar
+                problemas, incompatibilidades, tensiones
+                y procesos de transformación.
+            </p>
+
+        </div>
+
+        <div class="labprob-card-footer">
+
+            <span>
+                Investigación experimental
+            </span>
+
+            <span>
+                Entrar al laboratorio →
+            </span>
+
+        </div>
+
+    </a>
+
+</section>
+
 <section class="section">
 
     <div class="section-label">
@@ -1755,7 +1810,7 @@ html {
     <div class="feature-list">
 
 
-        <a href="/publicaciones/articulos/"
+        <a href="{{ "/publicaciones/articulos/" | relLangURL }}"
            class="feature-link">
 
             <span class="feature-number">
@@ -1773,7 +1828,7 @@ html {
         </a>
 
 
-        <a href="/publicaciones/libros/"
+        <a href="{{ "/publicaciones/libros/" | relLangURL }}"
            class="feature-link">
 
             <span class="feature-number">
@@ -1791,7 +1846,7 @@ html {
         </a>
 
 
-        <a href="/publicaciones/traducciones/"
+        <a href="{{ "/publicaciones/traducciones/" | relLangURL }}"
            class="feature-link">
 
             <span class="feature-number">
@@ -1809,7 +1864,7 @@ html {
         </a>
 
 
-        <a href="/publicaciones/investigacion-en-curso/"
+        <a href="{{ "/publicaciones/investigacion-en-curso/" | relLangURL }}"
            class="feature-link">
 
             <span class="feature-number">
@@ -2770,7 +2825,7 @@ html {
         </h2>
 
 
-        <a href="/contacto/"
+        <a href="{{ "/contacto/" | relLangURL }}"
            class="contact-link">
 
             {{ i18n "contact_link" }}
@@ -3673,6 +3728,130 @@ html[data-theme="light"] .editorial-seal-image {
     }
 
 }
+
+/* =========================================
+   LABPROB — LABORATORIO DE PROBLEMATICIDAD
+   ========================================= */
+
+.labprob-feature {
+    margin-top: 0;
+}
+
+.labprob-card {
+    display: block;
+    position: relative;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 42px 0 36px;
+    color: var(--foreground);
+    text-decoration: none;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        padding 0.3s ease;
+}
+
+.labprob-card:hover {
+    background: var(--accent);
+    color: var(--foreground);
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.labprob-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+.labprob-number {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.labprob-arrow {
+    font-size: 1.4rem;
+    transition: transform 0.3s ease;
+}
+
+.labprob-card:hover .labprob-arrow {
+    transform: translateX(8px);
+}
+
+.labprob-card-body {
+    max-width: 850px;
+}
+
+.labprob-title {
+    margin: 0 0 24px;
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+}
+
+.labprob-description {
+    max-width: 650px;
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+.labprob-card:hover .labprob-description,
+.labprob-card:hover .labprob-number {
+    color: var(--foreground);
+}
+
+.labprob-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 70px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.labprob-card:hover .labprob-card-footer {
+    border-color: rgba(232, 228, 220, 0.35);
+    color: var(--foreground);
+}
+
+@media (max-width: 700px) {
+
+    .labprob-card {
+        padding: 32px 0;
+    }
+
+    .labprob-card:hover {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .labprob-card-header {
+        margin-bottom: 60px;
+    }
+
+    .labprob-title {
+        font-size: 2.5rem;
+    }
+
+    .labprob-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 50px;
+    }
+
+}
 </style>
 
 
@@ -3739,10 +3918,4 @@ html[data-theme="light"] .editorial-seal-image {
 </body>
 
 </html>
-
-
-
-
-
-
 

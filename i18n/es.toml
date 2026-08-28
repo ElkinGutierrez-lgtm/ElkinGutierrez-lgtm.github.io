@@ -87,3 +87,16 @@ other = "Pensar también"
 
 [contact_link]
 other = "Contacto →"
+[labprob]
+eyebrow = "LABPROB · 01"
+title_line1 = "Laboratorio"
+title_line2 = "de"
+title_accent = "Problematicidad"
+subtitle = "Campos problemáticos, individuación y transformación"
+manifesto = "Investigar la génesis, estructura, persistencia y transformación de los campos problemáticos que condicionan la emergencia de nuevas formas de existencia, pensamiento, organización y acción."
+motto_1 = "Estudiar problemas."
+motto_2 = "Comprender emergencias."
+motto_3 = "Inventar transformaciones."
+
+[laboratory]
+other = "Laboratorio"

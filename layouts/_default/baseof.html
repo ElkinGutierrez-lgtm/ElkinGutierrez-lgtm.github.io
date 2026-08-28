@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ .Language.Lang }}">
 
 <head>
@@ -517,7 +517,7 @@
 
         }
 
-    
+
 /* =========================================================
    PROGRAMA DE INVESTIGACIÓN — NUEVE ÁREAS
    ========================================================= */
@@ -555,7 +555,7 @@
 <header class="site-header">
 
 
-    <a href="/"
+    <a href="{{ "/" | relLangURL }}"
        class="brand">
 
         ELKIN <span>GUTIÉRREZ</span>
@@ -574,18 +574,18 @@
         </a>
 
 
-        <a href="{{ "/publicaciones/" | relLangURL }}"
-           class="{{ if eq .Section "publicaciones" }}active{{ end }}">
+        <a href="{{ "/labprob/" | relLangURL }}"
+           class="{{ if eq .Section "labprob" }}active{{ end }}">
 
-            {{ i18n "publications" }}
+            {{ i18n "laboratory" }}
 
         </a>
 
 
-        <a href="{{ "/sobre-mi/" | relLangURL }}"
-           class="{{ if eq .Section "sobre-mi" }}active{{ end }}">
+        <a href="{{ "/publicaciones/" | relLangURL }}"
+           class="{{ if eq .Section "publicaciones" }}active{{ end }}">
 
-            {{ i18n "about" }}
+            {{ i18n "publications" }}
 
         </a>
 
@@ -596,6 +596,16 @@
             {{ i18n "cv" }}
 
         </a>
+
+<a href="{{ "/sobre-mi/" | relLangURL }}"
+           class="{{ if eq .Section "sobre-mi" }}active{{ end }}">
+
+            {{ i18n "about" }}
+
+        </a>
+
+
+
 
 
         <a href="{{ "/contacto/" | relLangURL }}"
@@ -703,9 +713,4 @@
 </body>
 
 </html>
-
-
-
-
-
 
