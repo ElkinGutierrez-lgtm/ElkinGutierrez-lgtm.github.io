@@ -84,6 +84,114 @@
         }
 
 
+
+        /* =========================================
+           INTRO — CABALLO
+           ========================================= */
+
+        #site-intro {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #000;
+            color: #fff;
+            opacity: 1;
+            visibility: visible;
+            transition:
+                opacity 900ms ease,
+                visibility 900ms ease;
+        }
+
+        #site-intro.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-symbol {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 92px;
+            line-height: 1;
+            color: #fff;
+            opacity: 0;
+            transform: scale(.94);
+            animation: introKnightIn 900ms cubic-bezier(.22,1,.36,1) forwards;
+        }
+
+        .intro-name {
+            margin-top: 26px;
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-size: clamp(25px, 4vw, 42px);
+            font-weight: 500;
+            letter-spacing: .16em;
+            text-align: center;
+            color: #fff;
+            opacity: 0;
+            transform: translateY(8px);
+            animation: introTextIn 700ms ease 450ms forwards;
+        }
+
+        .intro-role {
+            margin-top: 7px;
+            font-family: Inter, Arial, sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            text-align: center;
+            color: #A8A8A8;
+            opacity: 0;
+            transform: translateY(6px);
+            animation: introTextIn 700ms ease 650ms forwards;
+        }
+
+        @keyframes introKnightIn {
+            0% {
+                opacity: 0;
+                transform: scale(.88);
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes introTextIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #site-intro {
+                transition: none;
+            }
+
+            .intro-symbol,
+            .intro-name,
+            .intro-role {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
         /* =========================================
            RESET
            ========================================= */
@@ -1129,6 +1237,27 @@ html {
 
 
 <body>
+
+    <!-- =========================================
+         INTRO — CABALLO
+         ========================================= -->
+
+    <div id="site-intro"
+         aria-hidden="true">
+
+        <div class="intro-symbol"
+             aria-hidden="true">♞</div>
+
+        <div class="intro-name">
+            ELKIN GUTIÉRREZ
+        </div>
+
+        <div class="intro-role">
+            Filósofo · Investigador
+        </div>
+
+    </div>
+
 
 
 <header class="site-header">
@@ -3915,7 +4044,37 @@ html[data-theme="light"] .editorial-seal-image {
         })();
     </script>
 
+
+    <script>
+        (function () {
+
+            const intro = document.getElementById("site-intro");
+
+            if (!intro) return;
+
+            document.documentElement.classList.add("intro-active");
+
+            window.addEventListener("load", function () {
+
+                setTimeout(function () {
+
+                    intro.classList.add("is-hidden");
+
+                    document.documentElement.classList.remove("intro-active");
+
+                    setTimeout(function () {
+                        intro.remove();
+                    }, 950);
+
+                }, 1500);
+
+            });
+
+        })();
+    </script>
+
 </body>
 
 </html>
+
 
